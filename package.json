@@ -1,0 +1,32 @@
+{
+  "name": "pajamas",
+  "version": "1.0.0",
+  "description": "Chud norn mai dai norn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tncpcnt/pajamas.git"
+  },
+  "keywords": [
+    "web",
+    "app"
+  ],
+  "author": "Pang & BEE & bamboo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tncpcnt/pajamas/issues"
+  },
+  "homepage": "https://github.com/tncpcnt/pajamas#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "es6-promise": "^4.2.4",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.14",
+    "nodemon": "^1.17.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
