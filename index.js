@@ -6,6 +6,7 @@ var configDB = require('./config/dbconfig.js');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var user = require('./models/user.js');
+var product = require('./models/product');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -57,7 +58,7 @@ app.post('/login',function(req,res){
         else{
             console.log(req.body.username);
             console.log(req.body.password);
-            res.end('success');
+            res.json({'user':myuser});
 
         }
         
@@ -65,6 +66,64 @@ app.post('/login',function(req,res){
 
 
 });
+
+app.post('/product',function(req,res){
+    var newProduct = {
+        nameProduct:req.body.nameProduct,
+        price:req.body.price,
+        detail:req.body.detail,
+        image:req.body.image
+    }
+
+    product.create(newProduct,function(err,result){
+        if(err){
+            console.log(err.errmsg);
+            res.end('fail');
+        }
+        else{
+            console.log(result);
+            res.end('success');
+        }
+    })
+})
+app.get('/allProduct',function(req,res){
+    product.find({},function(err,result){
+        if(err){
+            console.log(err.errmsg);
+            res.end('fail');
+        }else{
+            console.log(result);
+            res.json({'product':result});
+        }
+    })
+})
+
+app.post('/addCrat',function(req,res){
+    var userID = req.body.userID;
+    var ProductId = req.body.ProductId;
+    
+    product.findOne(ProductId,function(err,result){
+        if(err){
+            console.log(err.errmsg);
+        }
+        else{
+            user.update({
+                _id: userID
+              }, {
+                $push: {
+                  historyCart: result
+                }
+              },
+              function(err, result) {
+                if (err) throw err;
+                res.json({'product':result});
+              }
+        
+            );
+        }
+    })
+  
+})
 
 
 app.listen(port, function () {
