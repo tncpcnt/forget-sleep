@@ -40,24 +40,37 @@
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
 
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake"><font color="#ffffff">Promotion</font></a>  <a href="#">Get flat 35% off on orders over $50!</a>
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
+                    <font color="#ffffff">Promotion</font>
+                </a>
+                <a href="#">Get flat 35% off on orders over $50!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li ng-if="isLogin == false">
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="register.html">Register</a>
+                    <li ng-if="isLogin == false">
+                        <a href="register.html">Register</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li ng-if="isLogin == true">
+                        <a>[[username]]</a>
                     </li>
-                    <li><a href="#">Recently viewed</a>
+                    <li ng-if="isLogin == true">
+                        <a ng-click="logout()" >Logout</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#">Recently viewed</a>
                     </li>
                 </ul>
             </div>
@@ -80,13 +93,17 @@
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-sign-in"></i> Log in</button>
                             </p>
 
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted">
+                            <a href="register.html">
+                                <strong>Register now</strong>
+                            </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -106,7 +123,7 @@
 
                 <a class="navbar-brand home" href="index.html" data-animate-hover="shake">
                     <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
-                    
+
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -118,7 +135,8 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-xs">3 items in cart</span>
                     </a>
                 </div>
             </div>
@@ -127,10 +145,13 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active">
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -138,42 +159,51 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
-                                                <li><a href="category.html">Sexy</a>
+                                                <li>
+                                                    <a href="category.html">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>CHILD</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
                                             </ul>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +212,7 @@
                         </ul>
                     </li>
 
-                    
+
                 </ul>
 
             </div>
@@ -191,7 +221,10 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-sm">3 items in cart</span>
+                    </a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -211,9 +244,11 @@
                         <input type="text" class="form-control" placeholder="Search">
                         <span class="input-group-btn">
 
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
 
-		    </span>
+                        </span>
                     </div>
                 </form>
 
@@ -261,30 +296,40 @@
                     <div class="same-height-row">
                         <div class="col-sm-4">
                             <div class="box same-height clickable">
-                                <div class="icon"><i class="fa fa-heart"></i>
+                                <div class="icon">
+                                    <i class="fa fa-heart"></i>
                                 </div>
 
-                                <h3><a href="#">We love our customers</a></h3>
+                                <h3>
+                                    <a href="#">We love our customers</a>
+                                </h3>
                                 <p>We are known to provide best possible service ever</p>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="box same-height clickable">
-                                <div class="icon"><i class="fa fa-tags"></i>
+                                <div class="icon">
+                                    <i class="fa fa-tags"></i>
                                 </div>
 
-                                <h3><a href="#">Best prices</a></h3>
-                                <p>You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
+                                <h3>
+                                    <a href="#">Best prices</a>
+                                </h3>
+                                <p>You can check that the height of the boxes adjust when longer text like this one is used
+                                    in one of them.</p>
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="box same-height clickable">
-                                <div class="icon"><i class="fa fa-thumbs-up"></i>
+                                <div class="icon">
+                                    <i class="fa fa-thumbs-up"></i>
                                 </div>
 
-                                <h3><a href="#">100% satisfaction guaranteed</a></h3>
+                                <h3>
+                                    <a href="#">100% satisfaction guaranteed</a>
+                                </h3>
                                 <p>Free returns on everything for 3 months.</p>
                             </div>
                         </div>
@@ -333,7 +378,9 @@
                                     <img src="img/product1.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
+                                    <h3>
+                                        <a href="detail.html">Fur coat with very but very very long name</a>
+                                    </h3>
                                     <p class="price">$143.00</p>
                                 </div>
                                 <!-- /.text -->
@@ -361,8 +408,11 @@
                                     <img src="img/94621.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">White Blouse Armani</a></h3>
-                                    <p class="price"><del>$280</del> $143.00</p>
+                                    <h3>
+                                        <a href="detail.html">White Blouse Armani</a>
+                                    </h3>
+                                    <p class="price">
+                                        <del>$280</del> $143.00</p>
                                 </div>
                                 <!-- /.text -->
 
@@ -407,7 +457,9 @@
                                     <img src="img/product3.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Black Blouse Versace</a></h3>
+                                    <h3>
+                                        <a href="detail.html">Black Blouse Versace</a>
+                                    </h3>
                                     <p class="price">$143.00</p>
                                 </div>
                                 <!-- /.text -->
@@ -435,7 +487,9 @@
                                     <img src="img/product3.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Black Blouse Versace</a></h3>
+                                    <h3>
+                                        <a href="detail.html">Black Blouse Versace</a>
+                                    </h3>
                                     <p class="price">$143.00</p>
                                 </div>
                                 <!-- /.text -->
@@ -463,7 +517,9 @@
                                     <img src="img/94621.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">White Blouse Versace</a></h3>
+                                    <h3>
+                                        <a href="detail.html">White Blouse Versace</a>
+                                    </h3>
                                     <p class="price">$143.00</p>
                                 </div>
                                 <!-- /.text -->
@@ -497,7 +553,9 @@
                                     <img src="img/product1.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Fur coat</a></h3>
+                                    <h3>
+                                        <a href="detail.html">Fur coat</a>
+                                    </h3>
                                     <p class="price">$143.00</p>
                                 </div>
                                 <!-- /.text -->
@@ -512,7 +570,7 @@
                             <!-- /.product -->
                         </div>
                         <!-- /.col-md-4 -->
-                        
+
                         <div class="item">
                             <div class="product">
                                 <div class="flip-container">
@@ -533,8 +591,11 @@
                                     <img src="img/94621.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">White Blouse Armani</a></h3>
-                                    <p class="price"><del>$280</del> $143.00</p>
+                                    <h3>
+                                        <a href="detail.html">White Blouse Armani</a>
+                                    </h3>
+                                    <p class="price">
+                                        <del>$280</del> $143.00</p>
                                 </div>
                                 <!-- /.text -->
 
@@ -579,7 +640,9 @@
                                     <img src="img/3.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Black Blouse Versace</a></h3>
+                                    <h3>
+                                        <a href="detail.html">Black Blouse Versace</a>
+                                    </h3>
                                     <p class="price">$143.00</p>
                                 </div>
                                 <!-- /.text -->
@@ -634,7 +697,8 @@
                     <div class="col-md-12">
                         <h3 class="text-uppercase">From our blog</h3>
 
-                        <p class="lead">What's new in the world of fashion? <a href="blog.html">Check our blog!</a>
+                        <p class="lead">What's new in the world of fashion?
+                            <a href="blog.html">Check our blog!</a>
                         </p>
                     </div>
                 </div>
@@ -647,26 +711,42 @@
                     <div id="blog-homepage" class="row">
                         <div class="col-sm-6">
                             <div class="post">
-                                <h4><a href="post.html">Fashion now</a></h4>
-                                <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a>
+                                <h4>
+                                    <a href="post.html">Fashion now</a>
+                                </h4>
+                                <p class="author-category">By
+                                    <a href="#">John Slim</a> in
+                                    <a href="">Fashion and style</a>
                                 </p>
                                 <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a>
+                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
+                                    libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+                                    leo.
+                                </p>
+                                <p class="read-more">
+                                    <a href="post.html" class="btn btn-primary">Continue reading</a>
                                 </p>
                             </div>
                         </div>
 
                         <div class="col-sm-6">
                             <div class="post">
-                                <h4><a href="post.html">Who is who - example blog post</a></h4>
-                                <p class="author-category">By <a href="#">John Slim</a> in <a href="">About Minimal</a>
+                                <h4>
+                                    <a href="post.html">Who is who - example blog post</a>
+                                </h4>
+                                <p class="author-category">By
+                                    <a href="#">John Slim</a> in
+                                    <a href="">About Minimal</a>
                                 </p>
                                 <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a>
+                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
+                                    libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
+                                    leo.
+                                </p>
+                                <p class="read-more">
+                                    <a href="post.html" class="btn btn-primary">Continue reading</a>
                                 </p>
                             </div>
 
@@ -686,7 +766,7 @@
 
         <!-- *** FOOTER ***
  _________________________________________________________ -->
-       
+
         <!-- /#footer -->
 
         <!-- *** FOOTER END *** -->
@@ -703,8 +783,10 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> & <a href="https://fity.cz">Fity</a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    <p class="pull-right">Template by
+                        <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> &
+                        <a href="https://fity.cz">Fity</a>
+                        <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>
             </div>
@@ -717,7 +799,7 @@
     <!-- /#all -->
 
 
-    
+
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -729,8 +811,46 @@
     <script src="js/bootstrap-hover-dropdown.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/front.js"></script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = false
+                });
+        }
+
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = true
+                });
+        }
+    });
+</script>
 
 </html>
