@@ -63,8 +63,8 @@ module.exports = (() => {
             console.log(err.errmsg)
             res.end("fail");
         } else {
-            console.log(result)
-            res.end("success");
+            req.session.username = result.username;
+            res.redirect("/")
         }
     });
 });
