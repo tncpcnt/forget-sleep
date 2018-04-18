@@ -31,9 +31,7 @@ module.exports = (() => {
             }
             if (!myuser) {
                 console.log('Nouser found');
-                res.status(500).json({
-                    'message': 'No user found'
-                })
+                res.redirect("/")
             } else {
                 req.session.username = username;
                 res.redirect("/");
