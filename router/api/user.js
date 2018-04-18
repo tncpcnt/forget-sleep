@@ -46,7 +46,8 @@ module.exports = (() => {
         delete req.session.username
         res.status(200).json({
             'message': 'success'
-        })    });
+        })
+    });
 
 
     router.post('/register', function (req, res) {
@@ -76,8 +77,8 @@ module.exports = (() => {
                 console.log(err.errmsg)
                 res.end("fail");
             } else {
-                console.log(result)
-                res.end("success");
+                req.session.username = result.username;
+                res.redirect("/");
             }
         });
     });
