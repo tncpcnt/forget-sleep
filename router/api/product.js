@@ -69,7 +69,6 @@ module.exports = (() => {
                 console.log(err.errmsg);
                 res.end('fail');
             }else{
-                console.log(result);
                 res.json({'product':result});
             }
         })
@@ -78,6 +77,19 @@ module.exports = (() => {
     router.get('/product/:code',function(req,res){
         var query = req.params.code;
         product.find({'code':code},function(err,result){
+            if(err){
+                console.log(err.errmsg);
+                res.end('fail');
+            }else{
+                console.log(result);
+                res.json({'product':result});
+            }
+        })
+    })
+
+    router.get('/product/id/:id',function(req,res){
+        var query = req.params.id;
+        product.find({'_id':query},function(err,result){
             if(err){
                 console.log(err.errmsg);
                 res.end('fail');

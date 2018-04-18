@@ -442,27 +442,28 @@
                                     <div class="flip-container">
                                         <div class="flipper">
                                             <div class="front">
-                                                <a href="detail.html">
+                                                <a ng-clicg>
                                                     <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
                                                 </a>
                                             </div>
                                             <div class="back">
-                                                <a href="detail.html">
+                                                <a ng-click="viewDtail(product._id)">
                                                     <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="detail.html" class="invisible">
+                                    <a ng-click="viewDtail(product._id)" class="invisible">
                                         <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
                                     </a>
                                     <div class="text">
                                         <h3>
-                                            <a href="detail.html">[[product.nameProduct]]</a>
+                                            <a ng-click="viewDtail(product._id)">
+                                                [[product.nameProduct]]</a>
                                         </h3>
                                         <p class="price">[[product.price]] Bath.</p>
                                         <p class="buttons">
-                                            <a href="detail.html" class="btn btn-default">View detail</a>
+                                            <a ng-click="viewDtail(product._id)" class="btn btn-default">View detail</a>
                                             <a href="basket.html" class="btn btn-primary">
                                                 <i class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </p>
@@ -594,6 +595,11 @@
                     //Second function handles error
                     $scope.isLogin = true
                 });
+        }
+
+        $scope.viewDtail = function (idProduct) {
+            $window.localStorage.setItem('idProduct', idProduct);
+            $window.location.href = "detail.html"
         }
     });
 </script>
