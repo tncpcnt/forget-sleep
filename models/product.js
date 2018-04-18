@@ -14,10 +14,6 @@ var productSchema= new Schema({
         default:Date.now
     },
     'quantity':Number
-        
-    
-   
-
 })
 
 var product = mongoose.model('product',productSchema);

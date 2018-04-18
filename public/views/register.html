@@ -40,23 +40,36 @@
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake"><font color="#ffffff">Promotion</font></a>  <a href="#">Get flat 35% off on orders over $50!</a>
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
+                    <font color="#ffffff">Promotion</font>
+                </a>
+                <a href="#">Get flat 35% off on orders over $50!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li ng-if="isLogin == false">
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="register.html">Register</a>
+                    <li ng-if="isLogin == false">
+                        <a href="register.html">Register</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li ng-if="isLogin == true">
+                        <a>[[username]]</a>
                     </li>
-                    <li><a href="#">Recently viewed</a>
+                    <li ng-if="isLogin == true">
+                        <a ng-click="logout()">Logout</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#">Recently viewed</a>
                     </li>
                 </ul>
             </div>
@@ -72,20 +85,24 @@
                     <div class="modal-body">
                         <form action="/api/login" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email-modal" placeholder="email" name = "username">
+                                <input type="text" class="form-control" id="email-modal" placeholder="email" name="username">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password-modal" placeholder="password" name = "password">
+                                <input type="password" class="form-control" id="password-modal" placeholder="password" name="password">
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-sign-in"></i> Log in</button>
                             </p>
 
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted">
+                            <a href="register.html">
+                                <strong>Register now</strong>
+                            </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -105,7 +122,7 @@
 
                 <a class="navbar-brand home" href="index.html" data-animate-hover="shake">
                     <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
-                    
+
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -117,7 +134,8 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-xs">3 items in cart</span>
                     </a>
                 </div>
             </div>
@@ -126,10 +144,13 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active">
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,42 +158,51 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
-                                                
+
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
-                                                <li><a href="category.html">Sexy</a>
+                                                <li>
+                                                    <a href="category.html">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>CHILD</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a href="category.html">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
                                                 </li>
                                             </ul>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +211,7 @@
                         </ul>
                     </li>
 
-                    
+
                 </ul>
 
             </div>
@@ -190,7 +220,10 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-sm">3 items in cart</span>
+                    </a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -210,9 +243,11 @@
                         <input type="text" class="form-control" placeholder="Search">
                         <span class="input-group-btn">
 
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
 
-		    </span>
+                        </span>
                     </div>
                 </form>
 
@@ -234,7 +269,8 @@
                 <div class="col-md-12">
 
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li>
+                            <a href="#">Home</a>
                         </li>
                         <li>New account / Sign in</li>
                     </ul>
@@ -246,60 +282,64 @@
                         <h1>New account</h1>
 
                         <p class="lead">Not our registered customer yet?</p>
-                        <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
-                        <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                        <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The
+                            whole process will not take you more than a minute!</p>
+                        <p class="text-muted">If you have any questions, please feel free to
+                            <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
 
                         <hr>
 
                         <form action="/api/register" method="post">
                             <div class="form-group">
                                 <label for="fname">Firstname</label>
-                                <input type="text" class="form-control" id="fname" name = "firstname">
+                                <input type="text" class="form-control" id="fname" name="firstname">
                                 <label for="fname">Lastname</label>
-                                <input type="text" class="form-control" id="lname" name = "lastname">
+                                <input type="text" class="form-control" id="lname" name="lastname">
                             </div>
-                                 <label for="fname">Gender  </label>
-                                  <input type="checkbox" name="sex" value="Female" name = "gender" >Female          
-                                  <input type="checkbox" name="sex" value="Male" name = "gender" >Male<br>
+                            <label for="fname">Gender </label>
+                            <input type="checkbox" name="sex" value="Female" name="gender">Female
+                            <input type="checkbox" name="sex" value="Male" name="gender">Male
+                            <br>
                             <div class="form-group">
-                                    Birthday: 
-                                    <input type ="date" name="bday" name = "birthDay"> 
+                                Birthday:
+                                <input type="date" name="bday" name="birthDay">
                             </div>
                             <div class="form-group">
                                 <label for="text">Telephone No</label>
-                                <input type="text" class="form-control" id="tel" name = "tel">
+                                <input type="text" class="form-control" id="tel" name="tel">
                                 <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email-register" name = "username">
+                                <input type="text" class="form-control" id="email-register" name="username">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password-register" name = "password">
+                                <input type="password" class="form-control" id="password-register" name="password">
                                 <label for="cpassword">Confirm Password</label>
                                 <input type="password" class="form-control" id="cpassword">
                             </div>
                             <div class="form-group">
                                 <br>
-                                
-                                <label for="text">Address</label>
-                                 <label for="text">Hose No.</label>
-                                <input type="text" class="form-control" id="houseNo" name = "addressHoseNo">
-                                <label for="text">Village No.</label>
-                                <input type="text" class="form-control" id="villageNo" name = "villageNo">
-                                <label for="text">Land</label>
-                                <input type="text" class="form-control" id="land" name = "land">
-                                <label for="text">Road</label>
-                                <input type="text" class="form-control" id="road" name = "road">
-                                <label for="text">Sub District</label>
-                                <input type="text" class="form-control" id="subDistrict" name = "subDistrict">
-                                <label for="text">District</label>
-                                <input type="text" class="form-control" id="district" name = "district">
-                                <label for="text">Province</label>
-                                <input type="text" class="form-control" id="province" name = "province">
-                                <label for="text">Zip Code</label>
-                                <input type="text" class="form-control" id="zipCode" name = "zipCode">
 
-                                
+                                <label for="text">Address</label>
+                                <label for="text">Hose No.</label>
+                                <input type="text" class="form-control" id="houseNo" name="addressHoseNo">
+                                <label for="text">Village No.</label>
+                                <input type="text" class="form-control" id="villageNo" name="villageNo">
+                                <label for="text">Land</label>
+                                <input type="text" class="form-control" id="land" name="land">
+                                <label for="text">Road</label>
+                                <input type="text" class="form-control" id="road" name="road">
+                                <label for="text">Sub District</label>
+                                <input type="text" class="form-control" id="subDistrict" name="subDistrict">
+                                <label for="text">District</label>
+                                <input type="text" class="form-control" id="district" name="district">
+                                <label for="text">Province</label>
+                                <input type="text" class="form-control" id="province" name="province">
+                                <label for="text">Zip Code</label>
+                                <input type="text" class="form-control" id="zipCode" name="zipCode">
+
+
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-user-md"></i> Register</button>
                             </div>
                         </form>
                     </div>
@@ -310,8 +350,9 @@
                         <h1>Login</h1>
 
                         <p class="lead">Already our customer?</p>
-                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies
-                            mi vitae est. Mauris placerat eleifend leo.</p>
+                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+                            tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+                            egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 
                         <hr>
 
@@ -325,7 +366,8 @@
                                 <input type="password" class="form-control" id="password">
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in" href="#"></i> Log in</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-sign-in" href="#"></i> Log in</button>
                             </div>
                         </form>
                     </div>
@@ -340,7 +382,7 @@
 
         <!-- *** FOOTER ***
  _________________________________________________________ -->
-        
+
         <!-- /#footer -->
 
         <!-- *** FOOTER END *** -->
@@ -357,8 +399,10 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> & <a href="https://fity.cz">Fity</a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    <p class="pull-right">Template by
+                        <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> &
+                        <a href="https://fity.cz">Fity</a>
+                        <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>
             </div>
@@ -371,7 +415,7 @@
     <!-- /#all -->
 
 
-    
+
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -383,9 +427,48 @@
     <script src="js/bootstrap-hover-dropdown.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/front.js"></script>
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
+
+
+<script>
+    var app = angular.module('myApp', []);
+
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
+
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = false
+                });
+        }
+        
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = true
+                });
+        }
+    });
+</script>
 
 </html>
