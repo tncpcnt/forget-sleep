@@ -54,10 +54,15 @@ module.exports = (() => {
         })
     })
 
-    router.get('/product/categories/:category/:type',function(req,res){
-        var query = req.params.category;
-        var query2 = req.params.type;
-        product.find({'category':query,'type':query2},function(err,result){
+    router.post('/product/categories/',function(req,res){
+        var query ={};
+        if(req.body.category){
+            query['category']=req.body.category;
+        }
+        if(req.body.type){
+            query['type']=req.body.type;
+        }
+        product.find(query,function(err,result){
             if(err){
                 console.log(err.errmsg);
                 res.end('fail');
