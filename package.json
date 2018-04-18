@@ -22,8 +22,10 @@
   "homepage": "https://github.com/tncpcnt/pajamas#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "consolidate": "^0.15.1",
     "es6-promise": "^4.2.4",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "mongoose": "^5.0.14",
     "nodemon": "^1.17.3",
     "passport": "^0.4.0",

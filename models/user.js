@@ -15,6 +15,16 @@ var userSchema = new Schema({
     lastname:String,
     email:String,
     gender:String,
+    brithday : Date,
+    tel :String,
+    addressHoseNo : String,
+    villageNo : String,
+    land : String,
+    road : String,
+    sudDistrict: String,
+    district:String,
+    province:String,
+    zipCode:String,
 
     historyCart:[{
         type : mongoose.Schema.Types.ObjectId,
