@@ -34,7 +34,12 @@ module.exports = (() => {
                 res.redirect("/")
             } else {
                 req.session.username = username;
-                res.redirect("/");
+                if(myuser.role == "User")
+                    res.redirect("/");
+                else if(myuser.role == "Admin")
+                    res.redirect("/admin.html");
+                else
+                    res.redirect("/");
             }
 
         });
