@@ -41,7 +41,7 @@ module.exports = (() => {
                 res.redirect('/')
             } else {
                 console.log(result);
-                res.end('success');
+                res.redirect('/admin.html')
             }
         })
     })
@@ -58,6 +58,17 @@ module.exports = (() => {
                 });
             }
         })
+    })
+
+    router.delete('/product/:id', function (req, res) {
+        var query = req.params.id;
+        product.remove({ _id: query }, function(err) {
+            if (err) {
+            }
+            else {
+                res.redirect('/RemoveProduct.html')
+            }
+        });
     })
 
     router.get('/product/categories/:category', function (req, res) {
