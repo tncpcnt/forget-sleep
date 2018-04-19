@@ -40,23 +40,30 @@
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake"><font color="#ffffff">Promotion</font></a>  <a href="#">Get flat 35% off on orders over $50!</a>
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
+                    <font color="#ffffff">Promotion</font>
+                </a>
+                <a href="#">Get flat 35% off on orders over $50!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="register.html">Register</a>
+                    <li>
+                        <a href="register.html">Register</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li>
+                        <a href="contact.html">Contact</a>
                     </li>
-                    <li><a href="#">Recently viewed</a>
+                    <li>
+                        <a href="#">Recently viewed</a>
                     </li>
                 </ul>
             </div>
@@ -79,13 +86,17 @@
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-sign-in"></i> Log in</button>
                             </p>
 
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted">
+                            <a href="register.html">
+                                <strong>Register now</strong>
+                            </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -105,7 +116,7 @@
 
                 <a class="navbar-brand home" href="index.html" data-animate-hover="shake">
                     <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
-                    
+
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -117,7 +128,8 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-xs">3 items in cart</span>
                     </a>
                 </div>
             </div>
@@ -126,10 +138,13 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active">
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,42 +152,45 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                
+
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                                 </li>
-                                                <li><a href="category.html">Sexy</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-                                            <h5>CHILD</h5>
+                                            <h5>KIDS</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +199,7 @@
                         </ul>
                     </li>
 
-                    
+
                 </ul>
 
             </div>
@@ -190,7 +208,10 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-sm">3 items in cart</span>
+                    </a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -210,9 +231,11 @@
                         <input type="text" class="form-control" placeholder="Search">
                         <span class="input-group-btn">
 
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
 
-		    </span>
+                        </span>
                     </div>
                 </form>
 
@@ -233,13 +256,16 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li>
+                            <a href="#">Home</a>
                         </li>
-                        <li><a href="#">Ladies</a>
+                        <li>
+                            <a href="#">Ladies</a>
                         </li>
-                        <li><a href="#">Tops</a>
+                        <li>
+                            <a href="#">Tops</a>
                         </li>
-                        <li>White Blouse Armani</li>
+                        <li>[[product.nameProduct]]</li>
                     </ul>
 
                 </div>
@@ -256,41 +282,59 @@
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked category-menu">
                                 <li>
-                                    <a href="category.html">Men <span class="badge pull-right">42</span></a>
+                                    <a href="category.html">Men
+                                        <span class="badge pull-right">42</span>
+                                    </a>
                                     <ul>
-                                        <li><a href="category.html">T-shirts</a>
+                                        <li>
+                                            <a href="category.html">T-shirts</a>
                                         </li>
-                                        <li><a href="category.html">Shirts</a>
+                                        <li>
+                                            <a href="category.html">Shirts</a>
                                         </li>
-                                        <li><a href="category.html">Pants</a>
+                                        <li>
+                                            <a href="category.html">Pants</a>
                                         </li>
-                                        <li><a href="category.html">Accessories</a>
+                                        <li>
+                                            <a href="category.html">Accessories</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="active">
-                                    <a href="category.html">Ladies  <span class="badge pull-right">123</span></a>
+                                    <a href="category.html">Ladies
+                                        <span class="badge pull-right">123</span>
+                                    </a>
                                     <ul>
-                                        <li><a href="category.html">T-shirts</a>
+                                        <li>
+                                            <a href="category.html">T-shirts</a>
                                         </li>
-                                        <li><a href="category.html">Skirts</a>
+                                        <li>
+                                            <a href="category.html">Skirts</a>
                                         </li>
-                                        <li><a href="category.html">Pants</a>
+                                        <li>
+                                            <a href="category.html">Pants</a>
                                         </li>
-                                        <li><a href="category.html">Accessories</a>
+                                        <li>
+                                            <a href="category.html">Accessories</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="category.html">Kids  <span class="badge pull-right">11</span></a>
+                                    <a href="category.html">Kids
+                                        <span class="badge pull-right">11</span>
+                                    </a>
                                     <ul>
-                                        <li><a href="category.html">T-shirts</a>
+                                        <li>
+                                            <a href="category.html">T-shirts</a>
                                         </li>
-                                        <li><a href="category.html">Skirts</a>
+                                        <li>
+                                            <a href="category.html">Skirts</a>
                                         </li>
-                                        <li><a href="category.html">Pants</a>
+                                        <li>
+                                            <a href="category.html">Pants</a>
                                         </li>
-                                        <li><a href="category.html">Accessories</a>
+                                        <li>
+                                            <a href="category.html">Accessories</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -303,7 +347,10 @@
                     <div class="panel panel-default sidebar-menu">
 
                         <div class="panel-heading">
-                            <h3 class="panel-title">Brands <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                            <h3 class="panel-title">Brands
+                                <a class="btn btn-xs btn-danger pull-right" href="#">
+                                    <i class="fa fa-times-circle"></i> Clear</a>
+                            </h3>
                         </div>
 
                         <div class="panel-body">
@@ -332,7 +379,8 @@
                                     </div>
                                 </div>
 
-                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                                <button class="btn btn-default btn-sm btn-primary">
+                                    <i class="fa fa-pencil"></i> Apply</button>
 
                             </form>
 
@@ -342,7 +390,10 @@
                     <div class="panel panel-default sidebar-menu">
 
                         <div class="panel-heading">
-                            <h3 class="panel-title">Colours <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                            <h3 class="panel-title">Colours
+                                <a class="btn btn-xs btn-danger pull-right" href="#">
+                                    <i class="fa fa-times-circle"></i> Clear</a>
+                            </h3>
                         </div>
 
                         <div class="panel-body">
@@ -351,32 +402,38 @@
                                 <div class="form-group">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> <span class="colour white"></span> White (14)
+                                            <input type="checkbox">
+                                            <span class="colour white"></span> White (14)
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> <span class="colour blue"></span> Blue (10)
+                                            <input type="checkbox">
+                                            <span class="colour blue"></span> Blue (10)
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> <span class="colour green"></span> Green (20)
+                                            <input type="checkbox">
+                                            <span class="colour green"></span> Green (20)
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> <span class="colour yellow"></span> Yellow (13)
+                                            <input type="checkbox">
+                                            <span class="colour yellow"></span> Yellow (13)
                                         </label>
                                     </div>
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> <span class="colour red"></span> Red (10)
+                                            <input type="checkbox">
+                                            <span class="colour red"></span> Red (10)
                                         </label>
                                     </div>
                                 </div>
 
-                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+                                <button class="btn btn-default btn-sm btn-primary">
+                                    <i class="fa fa-pencil"></i> Apply</button>
 
                             </form>
 
@@ -397,7 +454,7 @@
                     <div class="row" id="productMain">
                         <div class="col-sm-6">
                             <div id="mainImage">
-                                <img src="img/94619.jpg" alt="" class="img-responsive">
+                                <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
                             </div>
 
                             <div class="ribbon sale">
@@ -415,14 +472,17 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="box">
-                                <h1 class="text-center">White Blouse Armani</h1>
-                                <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
+                                <h1 class="text-center">[[product.nameProduct]]</h1>
+                                <p class="goToDescription">
+                                    <a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
                                 </p>
-                                <p class="price">$124.00</p>
+                                <p class="price">$[[product.price]]</p>
 
                                 <p class="text-center buttons">
-                                    <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
-                                    <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                                    <a href="basket.html" class="btn btn-primary">
+                                        <i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                    <a href="basket.html" class="btn btn-default">
+                                        <i class="fa fa-heart"></i> Add to wishlist</a>
                                 </p>
 
 
@@ -430,18 +490,18 @@
 
                             <div class="row" id="thumbs">
                                 <div class="col-xs-4">
-                                    <a href="img/94621.jpg" class="thumb">
-                                        <img src="img/94619.jpg" alt="" class="img-responsive">
+                                    <a ng-href="pic/[[product.image]]" class="thumb">
+                                        <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="col-xs-4">
-                                    <a href="img/94620.jpg" class="thumb">
-                                        <img src="img/94620.jpg" alt="" class="img-responsive">
+                                    <a ng-href="pic/[[product.image]]" class="thumb">
+                                        <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="col-xs-4">
-                                    <a href="img/94621.jpg" class="thumb">
-                                        <img src="img/94621.jpg" alt="" class="img-responsive">
+                                    <a ng-href="pic/[[product.image]]" class="thumb">
+                                        <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
                                     </a>
                                 </div>
                             </div>
@@ -453,20 +513,26 @@
                     <div class="box" id="details">
                         <p>
                             <h4>Product details</h4>
-                            <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>
-                            <h4>Material & care</h4>
-                            <ul>
-                                <li>Polyester</li>
-                                <li>Machine wash</li>
-                            </ul>
+                            <p>[[product.detail]]</p>
                             <h4>Size & Fit</h4>
                             <ul>
-                                <li>Regular fit</li>
-                                <li>The model (height 5'8" and chest 33") is wearing a size S</li>
+                                <li>[[product.size]]</li>
+                            </ul>
+                            <h4>Quantity</h4>
+                            <ul>
+                                <li>[[product.quantity]] sets</li>
+                            </ul>
+
+                            <h4>Product Code</h4>
+                            <ul>
+                                <li>[[product.code]]</li>
                             </ul>
 
                             <blockquote>
-                                <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em>
+                                <p>
+                                    <em>Define style this season with Armani's new range of trendy tops, crafted with intricate
+                                        details. Create a chic statement look by teaming this lace number with skinny jeans
+                                        and pumps.</em>
                                 </p>
                             </blockquote>
 
@@ -474,10 +540,18 @@
                             <div class="social">
                                 <h4>Show it to your friends</h4>
                                 <p>
-                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                    <a href="#" class="external facebook" data-animate-hover="pulse">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="#" class="external gplus" data-animate-hover="pulse">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                    <a href="#" class="external twitter" data-animate-hover="pulse">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="email" data-animate-hover="pulse">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
                                 </p>
                             </div>
                     </div>
@@ -677,7 +751,7 @@
 
         <!-- *** FOOTER ***
  _________________________________________________________ -->
-        
+
         <!-- /#footer -->
 
         <!-- *** FOOTER END *** -->
@@ -694,8 +768,10 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> & <a href="https://fity.cz">Fity</a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    <p class="pull-right">Template by
+                        <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> &
+                        <a href="https://fity.cz">Fity</a>
+                        <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>
             </div>
@@ -708,7 +784,7 @@
     <!-- /#all -->
 
 
-    
+
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -719,13 +795,65 @@
     <script src="js/modernizr.js"></script>
     <script src="js/bootstrap-hover-dropdown.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/front.js"></script>
-
-
-
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
+
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = false
+                });
+            $scope.getProductById($window.localStorage.getItem('idProduct'))
+        }
+
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = true
+                });
+        }
+
+        $scope.getProductById = function (id) {
+            $http.get("api//product/id/" + id)
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response.data);
+                    $scope.product = response.data.product[0]
+                }, function (response) {
+                    //Second function handles error
+                });
+        }
+
+        $scope.getProduct = function (category, type) {
+            $window.localStorage.setItem('category', category);
+            $window.localStorage.setItem('type', type);
+            $window.location.href = "category.html"
+        }
+    });
+</script>
 
 </html>
