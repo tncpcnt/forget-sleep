@@ -13,7 +13,9 @@ module.exports = (() => {
             image:req.body.image,
             category:req.body.category,
             type:req.body.type,
-            quantity :req.body.quantity
+            quantity :req.body.quantity,
+            colors :req.body.colors,
+            size: req.body.size
         }
     
         product.create(newProduct,function(err,result){

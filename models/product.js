@@ -9,6 +9,8 @@ var productSchema= new Schema({
     'image' : String,
     'category': String,
     'type': String,
+    'colors': String,
+    'size': String,
     'timestamp':{
         type:Date,
         default:Date.now
