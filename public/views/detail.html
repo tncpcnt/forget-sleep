@@ -153,10 +153,7 @@
                                             <h5>MAN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
 
                                             </ul>
@@ -165,24 +162,24 @@
                                             <h5>WOMEN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sexy</a>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-                                            <h5>CHILD</h5>
+                                            <h5>KIDS</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -190,10 +187,7 @@
                                             <h5>MASCOT</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
 
@@ -520,15 +514,18 @@
                         <p>
                             <h4>Product details</h4>
                             <p>[[product.detail]]</p>
-                            <h4>Material & care</h4>
-                            <ul>
-                                <li>Polyester</li>
-                                <li>Machine wash</li>
-                            </ul>
                             <h4>Size & Fit</h4>
                             <ul>
-                                <li>Regular fit</li>
-                                <li>The model (height 5'8" and chest 33") is wearing a size S</li>
+                                <li>[[product.size]]</li>
+                            </ul>
+                            <h4>Quantity</h4>
+                            <ul>
+                                <li>[[product.quantity]] sets</li>
+                            </ul>
+
+                            <h4>Product Code</h4>
+                            <ul>
+                                <li>[[product.code]]</li>
                             </ul>
 
                             <blockquote>
@@ -845,11 +842,16 @@
                 .then(function (response) {
                     //First function handles success
                     console.log(response.data);
-
                     $scope.product = response.data.product[0]
                 }, function (response) {
                     //Second function handles error
                 });
+        }
+
+        $scope.getProduct = function (category, type) {
+            $window.localStorage.setItem('category', category);
+            $window.localStorage.setItem('type', type);
+            $window.location.href = "category.html"
         }
     });
 </script>

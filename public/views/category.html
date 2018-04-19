@@ -582,7 +582,13 @@
                     //Second function handles error
                     $scope.isLogin = false
                 });
-            $scope.getProduct("", "")
+            var category = $window.localStorage.getItem('category')
+            var type = $window.localStorage.getItem('type')
+
+            if(category != null && type != type)
+                $scope.getProduct("", "")
+            else
+                $scope.getProduct(category, type)
         }
 
         $scope.logout = function () {
