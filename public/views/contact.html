@@ -43,20 +43,30 @@
 <body>
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
-    <div id="top">
+ <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake"><font color="#ffffff">Promotion</font></a>  <a href="#">Get flat 35% off on orders over $50!</a>
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
+                    <font color="#ffffff">Promotion</font>
+                </a>
+                <a href="#">Get flat 35% off on orders over $50!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li ng-if="isLogin == false">
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="register.html">Register</a>
+                    <li ng-if="isLogin == false">
+                        <a href="register.html">Register</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li ng-if="isLogin == true">
+                        <a>[[username]]</a>
                     </li>
-                    <li><a href="#">Recently viewed</a>
+                    <li ng-if="isLogin == true">
+                        <a ng-click="logout()" >Logout</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -125,57 +135,63 @@
 
             <div class="navbar-collapse collapse" id="navigation">
 
-                <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>MAN</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>WOMEN</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                <li><a href="category.html">Sexy</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>CHILD</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>MASCOT</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                            
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="active">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="dropdown yamm-fw">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="yamm-content">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <h5>MAN</h5>
+                                                <ul>
+                                                    <li>
+                                                        <a ng-click="getProduct('men','pajamas')">Pajamas</a>
+                                                    </li>
+    
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <h5>WOMEN</h5>
+                                                <ul>
+                                                    <li>
+                                                        <a ng-click="getProduct('women','pajamas')">Pajamas</a>
+                                                    </li>
+                                                    <li>
+                                                        <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
+                                                    </li>
+                                                    <li>
+                                                        <a ng-click="getProduct('women','sexy')">Sexy</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <h5>KIDS</h5>
+                                                <ul>
+                                                    <li>
+                                                        <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
+                                                    </li>
+                                                    <li>
+                                                        <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <h5>MASCOT</h5>
+                                                <ul>
+                                                    <li>
+                                                        <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                                    </li>
+                                                </ul>
+    
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <!-- /.yamm-content -->
                             </li>
                         </ul>
@@ -256,9 +272,6 @@
                                 </li>
                                 <li>
                                     <a href="contact.html">Contact page</a>
-                                </li>
-                                <li>
-                                    <a href="faq.html">FAQ</a>
                                 </li>
 
                             </ul>
@@ -400,7 +413,7 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> & <a href="https://fity.cz">Fity</a>
+                    <p class="pull-right"></a>
                          <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>

@@ -53,17 +53,20 @@
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li>
+                    <li ng-if="isLogin == false">
                         <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li>
+                    <li ng-if="isLogin == false">
                         <a href="register.html">Register</a>
+                    </li>
+                    <li ng-if="isLogin == true">
+                        <a>[[username]]</a>
+                    </li>
+                    <li ng-if="isLogin == true">
+                        <a ng-click="logout()" >Logout</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#">Recently viewed</a>
                     </li>
                 </ul>
             </div>
@@ -256,8 +259,8 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li>
-                            <a href="#">Home</a>
+                        <li class="active">
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
                             <a href="#">Ladies</a>
@@ -283,106 +286,57 @@
                             <ul class="nav nav-pills nav-stacked category-menu">
                                 <li>
                                     <a href="category.html">Men
-                                        <span class="badge pull-right">42</span>
+                                        <span class="badge pull-right">10</span>
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="category.html">T-shirts</a>
-                                        </li>
-                                        <li>
-                                            <a href="category.html">Shirts</a>
-                                        </li>
-                                        <li>
-                                            <a href="category.html">Pants</a>
-                                        </li>
-                                        <li>
-                                            <a href="category.html">Accessories</a>
+                                            <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="active">
-                                    <a href="category.html">Ladies
-                                        <span class="badge pull-right">123</span>
+                                    <a href="category.html">Women
+                                        <span class="badge pull-right">38</span>
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="category.html">T-shirts</a>
+                                            <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                         </li>
                                         <li>
-                                            <a href="category.html">Skirts</a>
+                                            <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                         </li>
                                         <li>
-                                            <a href="category.html">Pants</a>
-                                        </li>
-                                        <li>
-                                            <a href="category.html">Accessories</a>
+                                            <a ng-click="getProduct('women','sexy')">Sexy</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="category.html">Kids
-                                        <span class="badge pull-right">11</span>
+                                        <span class="badge pull-right">16</span>
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="category.html">T-shirts</a>
+                                            <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                         </li>
                                         <li>
-                                            <a href="category.html">Skirts</a>
-                                        </li>
-                                        <li>
-                                            <a href="category.html">Pants</a>
-                                        </li>
-                                        <li>
-                                            <a href="category.html">Accessories</a>
+                                            <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                         </li>
                                     </ul>
+                                    <li>
+                                        <a href="category.html">Mascot
+                                            <span class="badge pull-right">5</span>
+                                        </a>
+                                        <ul>
+                                            <li>
+                                                <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
                                 </li>
 
                             </ul>
-
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default sidebar-menu">
-
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Brands
-                                <a class="btn btn-xs btn-danger pull-right" href="#">
-                                    <i class="fa fa-times-circle"></i> Clear</a>
-                            </h3>
-                        </div>
-
-                        <div class="panel-body">
-
-                            <form>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Armani (10)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Versace (12)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Carlo Bruni (15)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">Jack Honey (14)
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-default btn-sm btn-primary">
-                                    <i class="fa fa-pencil"></i> Apply</button>
-
-                            </form>
+                               
 
                         </div>
                     </div>
@@ -476,7 +430,7 @@
                                 <p class="goToDescription">
                                     <a href="#details" class="scroll-to">Scroll to product details, material & care and sizing</a>
                                 </p>
-                                <p class="price">$[[product.price]]</p>
+                                <p class="price">[[product.price]] Bath.</p>
 
                                 <p class="text-center buttons">
                                     <a href="basket.html" class="btn btn-primary">
@@ -528,13 +482,13 @@
                                 <li>[[product.code]]</li>
                             </ul>
 
-                            <blockquote>
+                           <!-- <blockquote>
                                 <p>
                                     <em>Define style this season with Armani's new range of trendy tops, crafted with intricate
                                         details. Create a chic statement look by teaming this lace number with skinny jeans
                                         and pumps.</em>
                                 </p>
-                            </blockquote>
+                            </blockquote> -->
 
                             <hr>
                             <div class="social">
@@ -764,13 +718,11 @@
         <div id="copyright">
             <div class="container">
                 <div class="col-md-6">
-                    <p class="pull-left">© 2015 Your name goes here.</p>
+                    <p class="pull-left">© 2018 Your name goes here.</p>
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by
-                        <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> &
-                        <a href="https://fity.cz">Fity</a>
+                    <p class="pull-right">
                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>
