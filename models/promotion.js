@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'); 
 var Schema = mongoose.Schema; //promotion schema 
 
+
 var promotionSchema= new Schema({ 
     'nameProduct' : String, 
     'price' : Number, 

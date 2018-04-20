@@ -7,6 +7,14 @@ module.exports = (() => {
     router.get('/', function (req, res) {
         res.render("../public/views/index.html");
     });
+
+    router.get('/admin', function (req, res) {
+      if(req.session.role=='Admin')
+      res.render("../public/views/admin.html");
+      else{
+        res.redirect('/');
+      }
+  });
     
     router.get('/img/:name',function(req,res){
   
