@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Forget Sleep Shopping Online
     </title>
 
     <meta name="keywords" content="">
@@ -75,7 +75,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
+                        <h4 class="modal-title" id="Login">LOGIN</h4>
                     </div>
                     <div class="modal-body">
                         <form action="/api/login" method="post">
@@ -117,8 +117,6 @@
 
                 <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
                     <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs">
-                    <span class="sr-only">Obaju - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -261,7 +259,9 @@
                         <li class="active">
                             <a href="index.html">Home</a>
                         </li>
-                        <li>Ladies</li>
+                        <li>
+                            <a href="#">[[product.category]]</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -276,20 +276,22 @@
 
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked category-menu">
-                                <li>
+                                <li class="active">
                                     <a href="category.html">Men
-                                        <span class="badge pull-right">10</span>
+                                        <span class="badge pull-right"></span>
                                     </a>
                                     <ul>
                                         <li>
-                                            <a ng-click="getProduct('men','pajamas')">Pajamas</a>
+                                            <a ng-click="getProduct('men','pajamas')">Pajamas
+
+                                            </a>
                                         </li>
 
                                     </ul>
                                 </li>
                                 <li class="active">
                                     <a href="category.html">Women
-                                        <span class="badge pull-right">38</span>
+                                        <span class="badge pull-right"></span>
                                     </a>
                                     <ul>
                                         <li>
@@ -303,9 +305,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="category.html">Kids
-                                        <span class="badge pull-right">16</span>
+                                        <span class="badge pull-right"></span>
                                     </a>
                                     <ul>
                                         <li>
@@ -315,9 +317,9 @@
                                             <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                         </li>
                                     </ul>
-                                    <li>
+                                    <li class="active">
                                         <a href="category.html">Mascot
-                                            <span class="badge pull-right">5</span>
+                                            <span class="badge pull-right"></span>
                                         </a>
                                         <ul>
                                             <li>
@@ -610,7 +612,10 @@
             $window.localStorage.setItem('idProduct', idProduct);
             $window.location.href = "detail.html"
         }
+        
+
     });
+    
 </script>
 
 </html>

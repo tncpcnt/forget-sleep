@@ -41,6 +41,7 @@ module.exports = (() => {
                 res.redirect('/')
             } else {
                 console.log(result);
+                console.log("BEEEE");
                 res.redirect('/admin.html')
             }
         })

@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Forget Sleep Shopping Online
     </title>
 
     <meta name="keywords" content="">
@@ -38,12 +38,12 @@
 
 
 
-</head>
 
 <body>
+    <body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
- <div id="top">
+    <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
                 <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
@@ -63,7 +63,7 @@
                         <a>[[username]]</a>
                     </li>
                     <li ng-if="isLogin == true">
-                        <a ng-click="logout()" >Logout</a>
+                        <a ng-click="logout()">Logout</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
@@ -77,7 +77,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
+                        <h4 class="modal-title" id="Login">LOGIN</h4>
                     </div>
                     <div class="modal-body">
                         <form action="customer-orders.html" method="post">
@@ -89,13 +89,17 @@
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-sign-in"></i> Log in</button>
                             </p>
 
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted">
+                            <a href="register.html">
+                                <strong>Register now</strong>
+                            </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -115,7 +119,8 @@
 
                 <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
                     <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs">
+                    <span class="sr-only">Obaju - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -127,7 +132,8 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-xs">3 items in cart</span>
                     </a>
                 </div>
             </div>
@@ -135,69 +141,69 @@
 
             <div class="navbar-collapse collapse" id="navigation">
 
-                    <ul class="nav navbar-nav navbar-left">
-                        <li class="active">
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="dropdown yamm-fw">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="yamm-content">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h5>MAN</h5>
-                                                <ul>
-                                                    <li>
-                                                        <a ng-click="getProduct('men','pajamas')">Pajamas</a>
-                                                    </li>
-    
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <h5>WOMEN</h5>
-                                                <ul>
-                                                    <li>
-                                                        <a ng-click="getProduct('women','pajamas')">Pajamas</a>
-                                                    </li>
-                                                    <li>
-                                                        <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
-                                                    </li>
-                                                    <li>
-                                                        <a ng-click="getProduct('women','sexy')">Sexy</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <h5>KIDS</h5>
-                                                <ul>
-                                                    <li>
-                                                        <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
-                                                    </li>
-                                                    <li>
-                                                        <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <h5>MASCOT</h5>
-                                                <ul>
-                                                    <li>
-                                                        <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
-                                                    </li>
-                                                </ul>
-    
-                                            </div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>MAN</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>WOMEN</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>KIDS</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>MASCOT</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                            </ul>
+
                                         </div>
                                     </div>
+                                </div>
                                 <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
 
-                    
+
                 </ul>
 
             </div>
@@ -206,7 +212,10 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-sm">3 items in cart</span>
+                    </a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -226,9 +235,11 @@
                         <input type="text" class="form-control" placeholder="Search">
                         <span class="input-group-btn">
 
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
 
-		    </span>
+                        </span>
                     </div>
                 </form>
 
@@ -249,7 +260,8 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li>
+                            <a href="#">Home</a>
                         </li>
                         <li>Contact</li>
                     </ul>
@@ -302,7 +314,8 @@
 
                         <div class="row">
                             <div class="col-sm-4">
-                                <h3><i class="fa fa-map-marker"></i> Address</h3>
+                                <h3>
+                                    <i class="fa fa-map-marker"></i> Address</h3>
                                 <p>13/25 New Avenue
                                     <br>New Heaven
                                     <br>45Y 73J
@@ -313,19 +326,29 @@
                             </div>
                             <!-- /.col-sm-4 -->
                             <div class="col-sm-4">
-                                <h3><i class="fa fa-phone"></i> Call center</h3>
-                                <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication.</p>
-                                <p><strong>+33 555 444 333</strong>
+                                <h3>
+                                    <i class="fa fa-phone"></i> Call center</h3>
+                                <p class="text-muted">This number is toll free if calling from Great Britain otherwise we advise you to use the
+                                    electronic form of communication.</p>
+                                <p>
+                                    <strong>+33 555 444 333</strong>
                                 </p>
                             </div>
                             <!-- /.col-sm-4 -->
                             <div class="col-sm-4">
-                                <h3><i class="fa fa-envelope"></i> Electronic support</h3>
+                                <h3>
+                                    <i class="fa fa-envelope"></i> Electronic support</h3>
                                 <p class="text-muted">Please feel free to write an email to us or to use our electronic ticketing system.</p>
                                 <ul>
-                                    <li><strong><a href="mailto:">info@fakeemail.com</a></strong>
+                                    <li>
+                                        <strong>
+                                            <a href="mailto:">info@fakeemail.com</a>
+                                        </strong>
                                     </li>
-                                    <li><strong><a href="#">Ticketio</a></strong> - our ticketing support platform</li>
+                                    <li>
+                                        <strong>
+                                            <a href="#">Ticketio</a>
+                                        </strong> - our ticketing support platform</li>
                                 </ul>
                             </div>
                             <!-- /.col-sm-4 -->
@@ -375,7 +398,8 @@
                                 </div>
 
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send message</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fa fa-envelope-o"></i> Send message</button>
 
                                 </div>
                             </div>
@@ -396,7 +420,7 @@
 
         <!-- *** FOOTER ***
  _________________________________________________________ -->
-        
+
         <!-- /#footer -->
 
         <!-- *** FOOTER END *** -->
@@ -413,8 +437,9 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right"></a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    <p class="pull-right">
+                        </a>
+                        <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>
             </div>
@@ -427,7 +452,7 @@
     <!-- /#all -->
 
 
-    
+
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -468,5 +493,86 @@
 
 
 </body>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
+
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+
+        $scope.getProduct = function (category, type) {
+            var data
+            if (category == "" && type == "") {
+                data = {}
+            } else {
+                data = {
+                    "category": category,
+                    "type": type
+                }
+            }
+
+            $http({
+                method: 'POST',
+                url: "api/product/categories",
+                data: JSON.stringify(data)
+            })
+                .then(function (response) {
+                    //First function handles success
+                    $scope.listProduct = response.data.product
+                    console.log(response.data)
+                }, function (response) {
+                    //Second function handles error
+                    console.log(response)
+                });
+        }
+
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = false
+                });
+            var category = $window.localStorage.getItem('category')
+            var type = $window.localStorage.getItem('type')
+
+            if (category != null && type != type)
+                $scope.getProduct("", "")
+            else
+                $scope.getProduct(category, type)
+        }
+
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = true
+                });
+        }
+
+        $scope.viewDtail = function (idProduct) {
+            $window.localStorage.setItem('idProduct', idProduct);
+            $window.location.href = "detail.html"
+        }
+
+
+    });
+
+</script>
 
 </html>

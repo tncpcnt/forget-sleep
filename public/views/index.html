@@ -64,12 +64,12 @@
                         <a>[[username]]</a>
                     </li>
                     <li ng-if="isLogin == true">
-                        <a ng-click="logout()" >Logout</a>
+                        <a ng-click="logout()">Logout</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -79,7 +79,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
+                        <h4 class="modal-title" id="Login">LOGIN</h4>
                     </div>
                     <div class="modal-body">
                         <form action="/api/login" method="post">
@@ -158,7 +158,7 @@
                                             <h5>MAN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
 
                                             </ul>
@@ -167,13 +167,13 @@
                                             <h5>WOMEN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sexy</a>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -181,19 +181,19 @@
                                             <h5>Kids</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
-                                               
+
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
 
@@ -344,408 +344,145 @@
                 <div class="box">
                     <div class="container">
                         <div class="col-md-12">
-                            <h2>Hot this week</h2>
+                            <h2>PROMOTION</h2>
                         </div>
                     </div>
-                </div>
+                    </div>
 
                 <div class="container">
-                    <div class="product-slider">
+                    
                         <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                                            </a>
+
+                            <div class="row promotions">
+                                <div ng-repeat="promotion in listPromotion">
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="promotion">
+                                            <div class="flip-container">
+                                                <div class="flipper">
+                                                    <div class="front">
+                                                        <a ng-clicg>
+                                                            <img ng-src="pic/[[promotion.image]]" onerror="this.src='pic/promotion_image_not_found.gif'" alt="" class="img-responsive">
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                             <!--   <div class="text">
+                                                    <h3>
+                                                        <a ng-click="viewDtail(promotion._id)">
+                                                            [[promotion.nameProduct]]</a>
+                                                    </h3>
+                                                    <p class="price">[[promotion.price]] Bath.</p>
+                                                      <p class="buttons"> 
+                                            <a ng-click="viewDtail(product._id)" class="btn btn-default">View detail</a> 
+                                            <a href="basket.html" class="btn btn-primary"> 
+                                                <i class="fa fa-shopping-cart"></i>Add to cart</a> 
+                                        
+                                                    </p>
+                                                </div> -->
+                                                <!-- /.text -->
+                                            </div>
                                         </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
+                                        <!-- /.product -->
                                     </div>
+                                    <!-- /.col-md-4 -->
                                 </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">Fur coat with very but very very long name</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
+                                <!-- /.product -->
                             </div>
-                            <!-- /.product -->
+
                         </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/94619.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/94621.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/94621.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">White Blouse Armani</a>
-                                    </h3>
-                                    <p class="price">
-                                        <del>$280</del> $143.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                                <div class="ribbon sale">
-                                    <div class="theribbon">SALE</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                                <div class="ribbon new">
-                                    <div class="theribbon">NEW</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                                <div class="ribbon gift">
-                                    <div class="theribbon">GIFT</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product3.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product3_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">Black Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product3.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product3_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">Black Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/94619.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/94621.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/94621.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">White Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                                <div class="ribbon new">
-                                    <div class="theribbon">NEW</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">Fur coat</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                                <div class="ribbon gift">
-                                    <div class="theribbon">GIFT</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                            </div>
-                            <!-- /.product -->
-                        </div>
-                        <!-- /.col-md-4 -->
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/94619.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/94621.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/94621.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">White Blouse Armani</a>
-                                    </h3>
-                                    <p class="price">
-                                        <del>$280</del> $143.00</p>
-                                </div>
-                                <!-- /.text -->
-
-                                <div class="ribbon sale">
-                                    <div class="theribbon">SALE</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                                <div class="ribbon new">
-                                    <div class="theribbon">NEW</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                                <div class="ribbon gift">
-                                    <div class="theribbon">GIFT</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/33.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/3.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/3.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a href="detail.html">Black Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
+                        <!-- /.product-slider -->
                     </div>
-                    <!-- /.product-slider -->
+                    <!-- /.container -->
+
                 </div>
-                <!-- /.container -->
+                <!-- /#hot -->
 
-            </div>
-            <!-- /#hot -->
+                <!-- *** HOT END *** -->
 
-            <!-- *** HOT END *** -->
-
-            <!-- *** GET INSPIRED ***
+                <!-- *** GET INSPIRED ***
  _________________________________________________________ -->
-            <div class="container" data-animate="fadeInUpBig">
-                <div class="col-md-12">
-                    <div class="box slideshow">
-                        <h3>Get Inspired</h3>
-                        <p class="lead">Get the inspiration from our world class designers</p>
-                        <div id="get-inspired" class="owl-carousel owl-theme">
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/main (3).jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/main (2).jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/main (1).jpg" alt="Get inspired" class="img-responsive">
-                                </a>
+               <!-- <div class="container" data-animate="fadeInUpBig">
+                    <div class="col-md-12">
+                        <div class="box slideshow">
+                            <h3>Get Inspired</h3>
+                            <p class="lead">Get the inspiration from our world class designers</p>
+                            <div id="get-inspired" class="owl-carousel owl-theme">
+                            <div class=" item ">
+                                <a href="# ">
+                                        <img ng-src="pic/[[promotion.image]] " onerror="this.src='pic/product_image_not_found.gif'
+                                " alt=" " class="img-responsive ">
+                                    </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- *** GET INSPIRED END *** -->
 
             <!-- *** BLOG HOMEPAGE ***
  _________________________________________________________ -->
 
-            <div class="box text-center" data-animate="fadeInUp">
-                <div class="container">
-                    <div class="col-md-12">
-                        <h3 class="text-uppercase">From our blog</h3>
+           <!-- <div class="box text-center " data-animate="fadeInUp ">
+                <div class="container ">
+                    <div class="col-md-12 ">
+                        <h3 class="text-uppercase ">From our blog</h3>
 
-                        <p class="lead">What's new in the world of fashion?
-                            <a href="blog.html">Check our blog!</a>
+                        <p class="lead ">What's new in the world of fashion?
+                            <a href="blog.html ">Check our blog!</a>
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container ">
 
-                <div class="col-md-12" data-animate="fadeInUp">
+                <div class="col-md-12 " data-animate="fadeInUp ">
 
-                    <div id="blog-homepage" class="row">
-                        <div class="col-sm-6">
-                            <div class="post">
+                    <div id="blog-homepage " class="row ">
+                        <div class="col-sm-6 ">
+                            <div class="post ">
                                 <h4>
-                                    <a href="post.html">Fashion now</a>
+                                    <a href="post.html ">Fashion now</a>
                                 </h4>
-                                <p class="author-category">By
-                                    <a href="#">John Slim</a> in
-                                    <a href="">Fashion and style</a>
+                                <p class="author-category ">By
+                                    <a href="# ">John Slim</a> in
+                                    <a href=" ">Fashion and style</a>
                                 </p>
                                 <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                <p class="intro ">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                                     Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
                                     libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
                                     leo.
                                 </p>
-                                <p class="read-more">
-                                    <a href="post.html" class="btn btn-primary">Continue reading</a>
+                                <p class="read-more ">
+                                    <a href="post.html " class="btn btn-primary ">Continue reading</a>
                                 </p>
                             </div>
                         </div>
 
-                        <div class="col-sm-6">
-                            <div class="post">
+                        <div class="col-sm-6 ">
+                            <div class="post ">
                                 <h4>
-                                    <a href="post.html">Who is who - example blog post</a>
+                                    <a href="post.html ">Who is who - example blog post</a>
                                 </h4>
-                                <p class="author-category">By
-                                    <a href="#">John Slim</a> in
-                                    <a href="">About Minimal</a>
+                                <p class="author-category ">By
+                                    <a href="# ">John Slim</a> in
+                                    <a href=" ">About Minimal</a>
                                 </p>
                                 <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                <p class="intro ">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                                     Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu
                                     libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend
                                     leo.
                                 </p>
-                                <p class="read-more">
-                                    <a href="post.html" class="btn btn-primary">Continue reading</a>
+                                <p class="read-more ">
+                                    <a href="post.html " class="btn btn-primary ">Continue reading</a>
                                 </p>
                             </div>
 
                         </div>
 
-                    </div>
+                    </div> -->
                     <!-- /#blog-homepage -->
                 </div>
             </div>
@@ -769,21 +506,20 @@
 
         <!-- *** COPYRIGHT ***
  _________________________________________________________ -->
-        <div id="copyright">
-            <div class="container">
-                <div class="col-md-6">
-                    <p class="pull-left">© 2018 Your name goes here.</p>
+ <div id="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p class="pull-left">© 2018 Your name goes here.</p>
 
-                </div>
-                <div class="col-md-6">
-                    <p class="pull-right">
-                        <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
-                    </p>
-                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="pull-right">
+                    <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                </p>
             </div>
         </div>
-        <!-- *** COPYRIGHT END *** -->
-
+    </div>
+    <!-- *** COPYRIGHT END *** -->
 
 
     </div>
@@ -794,15 +530,15 @@
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/bootstrap-hover-dropdown.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/front.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script src="js/jquery.cookie.js "></script>
+    <script src="js/waypoints.min.js "></script>
+    <script src="js/modernizr.js "></script>
+    <script src="js/bootstrap-hover-dropdown.js "></script>
+    <script src="js/owl.carousel.min.js "></script>
+    <script src="js/front.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js "></script>
 </body>
 <script>
     var app = angular.module('myApp', []);
@@ -816,29 +552,51 @@
         $interpolateProvider.endSymbol(']]');
     });
     app.controller('myCtrl', function ($scope, $http, $location, $window) {
-        $scope.myFunction = function () {
-            $http.get("api/islogin")
+        $scope.getPromotion = function () {
+
+            $http.get("api/promotion ")
                 .then(function (response) {
-                    //First function handles success
+                    //First function handles success 
+                    $scope.listPromotion = response.data.promotion
+                    console.log(response.data)
+                }, function (response) {
+                    //Second function handles error 
+                    console.log(response)
+                });
+        }
+        $scope.myFunction = function () {
+            $http.get("api/islogin ")
+                .then(function (response) {
+                    //First function handles success 
                     console.log(response)
                     $scope.isLogin = true
                     $scope.username = response.data.username
                 }, function (response) {
-                    //Second function handles error
+                    //Second function handles error 
                     $scope.isLogin = false
                 });
+            $scope.getPromotion()
         }
-        
+
         $scope.logout = function () {
-            $http.get("api/logout")
+            $http.get("api/logout ")
                 .then(function (response) {
-                    //First function handles success
+                    //First function handles success 
                     $scope.isLogin = false
                     window.location.reload(true)
                 }, function (response) {
-                    //Second function handles error
+                    //Second function handles error 
                     $scope.isLogin = true
                 });
+        }
+        $scope.viewDtail = function (idPromotion) {
+            $window.localStorage.setItem('idPromotion', idPromotion);
+            $window.location.href = "detail.html "
+        }
+        $scope.getProduct = function (category, type) {
+            $window.localStorage.setItem('category', category);
+            $window.localStorage.setItem('type', type);
+            $window.location.href = "category.html"
         }
     });
 </script>
