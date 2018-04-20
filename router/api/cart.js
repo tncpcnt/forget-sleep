@@ -33,7 +33,7 @@ module.exports = (() => {
             if(product){
                 cart.add(product, product.code);
                 req.session.cart = cart;
-                res.status(200).json({ 'status': 'success' });
+                res.status(200).json({ 'status': 'success' ,'qty':cart.totalQty});
             }
         });
     });

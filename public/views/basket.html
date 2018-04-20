@@ -254,7 +254,6 @@
                                             <th colspan="2">Product</th>
                                             <th>Quantity</th>
                                             <th>Unit price</th>
-                                            <th>Discount</th>
                                             <th colspan="2">Total</th>
                                         </tr>
                                     </thead>
@@ -262,17 +261,14 @@
                                         <tr ng-repeat="product in listCart">
                                             <td>
                                                 <a href="#">
-                                                    <img src="img/detailsquare.jpg" alt="White Blouse Armani">
+                                                    <img ng-src="pic/[[product.item.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="White Blouse Armani">
                                                 </a>
                                             </td>
-                                            <td><a href="#"[[product.]]</a>
+                                            <td><a href="#"[[product.item.nameProduct]]</a>
                                             </td>
-                                            <td>
-                                                <input type="number" value="2" class="form-control">
-                                            </td>
-                                            <td>$123.00</td>
-                                            <td>$0.00</td>
-                                            <td>$246.00</td>
+                                            <td>[[product.qty]] sets</td>
+                                            <td>$[[product.item.price]]</td>
+                                            <td>$[[product.price]]</td>
                                             <td><a href="#"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
@@ -280,7 +276,7 @@
                                     <tfoot>
                                         <tr>
                                             <th colspan="5">Total</th>
-                                            <th colspan="2">$446.00</th>
+                                            <th colspan="2">$[[totalPrice]]</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -533,6 +529,7 @@
                     //Second function handles error
                     $scope.isLogin = false
                 });
+                $scope.getProductInCart()
         }
 
         $scope.logout = function () {
@@ -552,7 +549,9 @@
                 .then(function (response) {
                     //First function handles success
                     console.log(response.data);
-                    $scope.listCart = response.data.product[0]
+                    $scope.listCart = response.data.items
+                    $scope.totalPrice = response.data.totalPrice
+
                 }, function (response) {
                     //Second function handles error
                 });

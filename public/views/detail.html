@@ -803,15 +803,17 @@
        $scope.addToCart = function (code) {
            console.log("api/addtocart/" +code[0]);
            
-          /*  $http.get("api/addtocart/" + code)
+            $http.get("api/addtocart/" + code)
                 .then(function (response) {
                     //First function handles success
                     console.log(response.data);
-                    if(response.status == 200)
-                        $scope.quantityInCart
+                    if(response.data.status == "success")
+                        $scope.quantityInCart = response.data.qty
                 }, function (response) {
                     //Second function handles error
-                });*/
+                    console.log(response);
+
+                });
         }
 
         $scope.getProduct = function (category, type) {
