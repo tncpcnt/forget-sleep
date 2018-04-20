@@ -34,6 +34,7 @@ module.exports = (() => {
                 res.redirect("/")
             } else {
                 req.session.username = username;
+                req.session.role = myuser.role;
                 if(myuser.role == "User")
                     res.redirect("/");
                 else if(myuser.role == "Admin")
@@ -47,6 +48,7 @@ module.exports = (() => {
 
     router.get('/logout', function (req, res) {
         delete req.session.username
+        delete req.session.role
         res.status(200).json({
             'message': 'success'
         })

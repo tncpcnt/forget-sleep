@@ -2,8 +2,22 @@ module.exports = (() => {
     const express = require('express'); 
     const path = require('path'); 
     const router = express.Router(); 
-    var promotion = require('../../models/promotion'); 
-    var multer = require('multer') 
+    var promotion = require('../../models/promotion');
+    var User = require('../../models/user'); 
+    var multer = require('multer'); 
+    var nodemailer = require('nodemailer');
+    var _ = require('underscore');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'tncpbee12@gmail.com',
+    pass: '0823224985'
+  }
+});
+
+
+
     var storage = multer.diskStorage({ 
         destination: (req, file, cb) => { 
             cb(null, 'public/pic') 
@@ -36,8 +50,32 @@ module.exports = (() => {
                 console.log(err); 
                 res.end('fail'); 
                 res.redirect('/') 
-            } else { 
-                console.log(result); 
+            } else {
+                User.find({},function(err,users){
+
+                    console.log(users);
+                    _.each(users,function(user){
+                        console.log(user);
+                        console.log(user.username)
+                        var mailOptions = {
+                            from: 'tncpbee12@gmail.com',
+                            to: user.username,
+                            subject: 'โปรโมชั่นใหม่ว้อยยยย',
+                            text: 'มีโปรใหม่มานำสเนออย่าลืมเข้าไปเช็คจ้าาาาาาาาาาา'
+                          };
+                          
+                          transporter.sendMail(mailOptions, function(error, info){
+                              console.log(user.username)
+                            if (error) {
+                              console.log(error);
+                            } else {
+                              console.log('Email sent: ' + info.response);
+                            }
+                          });
+                    })
+                    
+                })
+                
                 res.redirect('/admin.html') 
             } 
         }) 
