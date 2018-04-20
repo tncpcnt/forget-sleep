@@ -40,7 +40,7 @@
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
     <div id="top">
@@ -259,13 +259,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr ng-repeat="product in listCart">
                                             <td>
                                                 <a href="#">
                                                     <img src="img/detailsquare.jpg" alt="White Blouse Armani">
                                                 </a>
                                             </td>
-                                            <td><a href="#">White Blouse Armani</a>
+                                            <td><a href="#"[[product.]]</a>
                                             </td>
                                             <td>
                                                 <input type="number" value="2" class="form-control">
@@ -273,23 +273,6 @@
                                             <td>$123.00</td>
                                             <td>$0.00</td>
                                             <td>$246.00</td>
-                                            <td><a href="#"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src="img/basketsquare.jpg" alt="Black Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">Black Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <input type="number" value="1" class="form-control">
-                                            </td>
-                                            <td>$200.00</td>
-                                            <td>$0.00</td>
-                                            <td>$200.00</td>
                                             <td><a href="#"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
@@ -523,10 +506,58 @@
     <script src="js/modernizr.js"></script>
     <script src="js/bootstrap-hover-dropdown.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/front.js"></script>
-
-
-
+    <script src="js/front.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
+
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = false
+                });
+        }
+
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error
+                    $scope.isLogin = true
+                });
+        }
+
+        $scope.getProductInCart = function () {
+            $http.get("api/cart")
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response.data);
+                    $scope.listCart = response.data.product[0]
+                }, function (response) {
+                    //Second function handles error
+                });
+        }
+    });
+</script>
 
 </html>

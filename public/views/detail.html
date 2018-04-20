@@ -132,7 +132,7 @@
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="hidden-xs">3 items in cart</span>
+                        <span class="hidden-xs">[[quantityInCart]] items in cart</span>
                     </a>
                 </div>
             </div>
@@ -213,7 +213,7 @@
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="basket.html" class="btn btn-primary navbar-btn">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="hidden-sm">3 items in cart</span>
+                        <span class="hidden-sm">[[quantityInCart]] items in cart</span>
                     </a>
                 </div>
                 <!--/.nav-collapse -->
@@ -433,7 +433,7 @@
                                 <p class="price">[[product.price]] Bath.</p>
 
                                 <p class="text-center buttons">
-                                    <a href="basket.html" class="btn btn-primary">
+                                    <a ng-click="addToCart([[product.code]])" class="btn btn-primary">
                                         <i class="fa fa-shopping-cart"></i> Add to cart</a>
                                     <a href="basket.html" class="btn btn-default">
                                         <i class="fa fa-heart"></i> Add to wishlist</a>
@@ -790,7 +790,7 @@
         }
 
         $scope.getProductById = function (id) {
-            $http.get("api//product/id/" + id)
+            $http.get("api/product/id/" + id)
                 .then(function (response) {
                     //First function handles success
                     console.log(response.data);
@@ -798,6 +798,20 @@
                 }, function (response) {
                     //Second function handles error
                 });
+        }
+
+       $scope.addToCart = function (code) {
+           console.log("api/addtocart/" +code[0]);
+           
+          /*  $http.get("api/addtocart/" + code)
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response.data);
+                    if(response.status == 200)
+                        $scope.quantityInCart
+                }, function (response) {
+                    //Second function handles error
+                });*/
         }
 
         $scope.getProduct = function (category, type) {
