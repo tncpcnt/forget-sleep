@@ -40,11 +40,9 @@
 
 </head>
 
-<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()"></body>
-
-<body>
-    <!-- *** TOPBAR ***
- _________________________________________________________ -->
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
+    <!-- * TOPBAR *
+ _______________________________________________________ -->
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
@@ -59,6 +57,9 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
+                    <li>
+                        <a href="#">Recently viewed</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -66,10 +67,10 @@
 
     </div>
 
-    <!-- *** TOP BAR END *** -->
+    <!-- * TOP BAR END * -->
 
-    <!-- *** NAVBAR ***
- _________________________________________________________ -->
+    <!-- * NAVBAR *
+ _______________________________________________________ -->
 
     <div class="navbar navbar-default yamm" role="navigation" id="navbar">
         <div class="container">
@@ -149,45 +150,46 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CHILD
                             <b class="caret"></b>
                         </a>
-                        <li>
-                            <div class="yamm-content">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h5>KIDS</h5>
-                                        <ul>
-                                            <li>
-                                                <a href="category.html">Sleep wear</a>
-                                            </li>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>CHILD</h5>
+                                            <ul>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
+                                                </li>
 
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                </ul>
-                </li>
-                <li class="dropdown yamm-fw">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MASCOT
-                        <b class="caret"></b>
-                    </a>
-
-                    <li>
-                        <div class="yamm-content">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h5>MASCOT</h5>
-                                    <ul>
-                                        <li>
-                                            <a href="category.html">Sleep wear</a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </li>
-                    </ul>
-                </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MASCOT
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>MASCOT</h5>
+                                            <ul>
+                                                <li>
+                                                    <a href="category.html">Sleep wear</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
 
 
                 </ul>
@@ -218,7 +220,7 @@
     </div>
     <!-- /#navbar -->
 
-    <!-- *** NAVBAR END *** -->
+    <!-- * NAVBAR END * -->
     <div id="advantages">
         <div id="all">
             <div id="content">
@@ -272,83 +274,24 @@
                                         <thead>
                                             <tr>
                                                 <th colspan="2">Product</th>
-                                                <th>Quantity</th>
+                                                <th>Price</th>
+
                                             </tr>
                                         </thead>
                                         <tbody id="myTbl">
                                             <tr ng-repeat="promotion in listPromotion">
                                                 <td>
                                                     <a href="#">
-                                                        <img ng-src="pic/[[promotion.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
+                                                        <img ng-src="pic/[[promotion.image]]" onerror="this.src='pic/promotion_image_not_found.gif'" alt="" class="img-responsive">
                                                     </a>
                                                 </td>
                                                 <td>
                                                     <a href="#">[[promotion.nameProduct]]</a>
                                                 </td>
-                                                <td>1</td>
-                                                <td>$200.00</td>
-                                                <td>-10%</td>
-                                                <td>$160.00</td>
+                                                <td>[[promotion.price]]</td>
                                                 <td>
-                                                    <button id="removeRow" class="btn btn-primary" type="button">
-                                                        <i class="fa fa-trash-o"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href="#">
-                                                        <img src="img/94621.jpg" alt="Black Blouse Armani">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a href="#">Black Blouse Armani</a>
-                                                </td>
-                                                <td>10</td>
-                                                <td>$200.00</td>
-                                                <td>Buy 1 Free 1</td>
-                                                <td>$100.00</td>
-                                                <td>
-                                                    <button id="removeRow" class="btn btn-primary" type="button">
-                                                        <i class="fa fa-trash-o"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href="#">
-                                                        <img src="img/33.jpg" alt="White Blouse Armani">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a href="#">White Blouse Armani</a>
-                                                </td>
-                                                <td>2</td>
-                                                <td>$120.00</td>
-                                                <td>-50%</td>
-                                                <td>$60.00</td>
-                                                <td>
-                                                    <button id="removeRow" class="btn btn-primary" type="button">
-                                                        <i class="fa fa-trash-o"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href="#">
-                                                        <img src="img/94621.jpg" alt="Black Blouse Armani">
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a href="#">Black Blouse Armani</a>
-                                                </td>
-                                                <td>0</td>
-                                                <td>$200.00</td>
-                                                <td>-20%</td>
-                                                <td>$160.00</td>
-
-                                                <td>
-                                                    <button id="removeRow" class="btn btn-primary" type="button">
+                                                    <button ng-confirm-click="Are you sure to delete this promotion ?" confirmed-click="remove(promotion._id)" id="removeRow" class="btn btn-primary"
+                                                        type="button">
                                                         <i class="fa fa-trash-o"></i>
                                                     </button>
                                                 </td>
@@ -410,18 +353,18 @@
             </div>
             <!-- /#content -->
 
-            <!-- *** FOOTER ***
- _________________________________________________________ -->
+            <!-- * FOOTER *
+ _______________________________________________________ -->
 
             <!-- /#footer -->
 
-            <!-- *** FOOTER END *** -->
+            <!-- * FOOTER END * -->
 
 
 
 
-            <!-- *** COPYRIGHT ***
- _________________________________________________________ -->
+            <!-- * COPYRIGHT *
+ _______________________________________________________ -->
             <div id="copyright">
                 <div class="container">
                     <div class="col-md-6">
@@ -432,12 +375,12 @@
                         <p class="pull-right">Template by
                             <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> &
                             <a href="https://fity.cz">Fity</a>
-                            <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                            <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding 🙂 If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                         </p>
                     </div>
                 </div>
             </div>
-            <!-- *** COPYRIGHT END *** -->
+            <!-- * COPYRIGHT END * -->
 
 
 
@@ -447,8 +390,8 @@
 
 
 
-        <!-- *** SCRIPTS TO INCLUDE ***
- _________________________________________________________ -->
+        <!-- * SCRIPTS TO INCLUDE *
+ _______________________________________________________ -->
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.cookie.js"></script>
@@ -458,21 +401,9 @@
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/front.js"></script>
         <script language="javascript" src="js/jquery-1.4.1.min.js"></script>
-        <script type="text/javascript">
-            $(function () {
-
-                $("#removeRow").click(function () {
-                    $("#myTbl tr:last-child").remove();
-                });
-
-
-            });
-        </script>
-
-
-
-</body>
-<script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    </body>
+    <script>
         var app = angular.module('myApp', []);
     
         app.config(function ($httpProvider) {
@@ -502,7 +433,7 @@
     
         app.controller('myCtrl', function ($scope, $http, $location, $window) {
     
-            $scope.getProduct = function (category, type) {
+            $scope.getPromotion = function (category, type) {
                 var data
                 if (category == "" && type == "") {
                     data = {}
@@ -515,13 +446,13 @@
     
                 $http({
                         method: 'POST',
-                        url: "api/product/categories",
+                        url: "api/promotion/categories",
                         data: JSON.stringify(data)
                     })
                     .then(function (response) {
                         //First function handles success
-                        $scope.listProduct = response.data.product
-                        console.log($scope.listProduct)
+                        $scope.listPromotion = response.data.promotion
+                        console.log($scope.listPromotion)
                     }, function (response) {
                         //Second function handles error
                         console.log(response)
@@ -539,20 +470,20 @@
                         //Second function handles error
                         $scope.isLogin = false
                     });
-                $scope.getProduct("", "")
+                $scope.getPromotion("", "")
             }
     
             $scope.remove = function (id) {
-                $http.delete("api/product/" + id)
+                $http.delete("api/promotion/" + id)
                     .then(function (response) {
                         //First function handles success
                     }, function (response) {
                         //Second function handles error
     
                     });
-                $scope.getProduct("", "")
+                $scope.getPromotion("", "")
             }
         });
     </script>
-
-</html>
+    
+    </html>

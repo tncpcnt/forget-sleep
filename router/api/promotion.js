@@ -97,7 +97,7 @@ var transporter = nodemailer.createTransport({
 
     router.delete('/promotion/:id', function (req, res) { 
         var query = req.params.id; 
-        product.remove({ _id: query }, function(err) { 
+        promotion.remove({ _id: query }, function(err) { 
             if (err) { 
             } 
             else { 
