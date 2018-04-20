@@ -807,8 +807,10 @@
                 .then(function (response) {
                     //First function handles success
                     console.log(response.data);
-                    if(response.data.status == "success")
+                    if(response.data.status == "success") {
                         $scope.quantityInCart = response.data.qty
+                        alert('Add To Cart Success !! : D')
+                    }
                 }, function (response) {
                     //Second function handles error
                     console.log(response);

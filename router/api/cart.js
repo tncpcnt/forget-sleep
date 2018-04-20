@@ -44,7 +44,7 @@ module.exports = (() => {
             res.json({ items: tmp, totalPrice: 0 });
         } else {
             var cart = new Cart(req.session.cart);
-            res.json({ items: cart.generateArray(), totalPrice: cart.totalPrice });
+            res.json({ items: cart.generateArray(),'qty':cart.totalQty, totalPrice: cart.totalPrice });
         }
     });
 

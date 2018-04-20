@@ -117,7 +117,7 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">[[quantityInCart]] items in cart</span>
                     </a>
                 </div>
             </div>
@@ -190,7 +190,7 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">[[quantityInCart]] items in cart</span></a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -551,6 +551,8 @@
                     console.log(response.data);
                     $scope.listCart = response.data.items
                     $scope.totalPrice = response.data.totalPrice
+                    $scope.quantityInCart = response.data.qty
+                    console.log( $scope.quantityInCart)
 
                 }, function (response) {
                     //Second function handles error

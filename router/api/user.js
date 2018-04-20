@@ -49,6 +49,7 @@ module.exports = (() => {
     router.get('/logout', function (req, res) {
         delete req.session.username
         delete req.session.role
+        delete req.session.cart
         res.status(200).json({
             'message': 'success'
         })
