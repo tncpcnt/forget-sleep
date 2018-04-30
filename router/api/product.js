@@ -71,6 +71,7 @@ module.exports = (() => {
             }
         });
     })
+    
 
     router.get('/product/categories/:category', function (req, res) {
         var query = req.params.category;

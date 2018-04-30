@@ -435,8 +435,8 @@
                                 <p class="text-center buttons">
                                     <a ng-click="addToCart([[product.code]])" class="btn btn-primary">
                                         <i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                    <a href="basket.html" class="btn btn-default">
-                                        <i class="fa fa-heart"></i> Add to wishlist</a>
+                                        <a ng-click="addToFav([[product.code]])" class="btn btn-default"> 
+                                            <i class="fa fa-heart"></i> Add to wishlist</a>
                                 </p>
 
 
@@ -517,34 +517,44 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/94621.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/94619.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/94619.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>Fur coat</h3>
-                                    <p class="price">$143</p>
-                                </div>
-                            </div>
-                            <!-- /.product -->
+                        <div class="col-md-3 col-sm-6"> 
+                            <div class="product same-height"> 
+                                <div class="flip-container"> 
+                                    <div class="flipper"> 
+                                        <div class="front"> 
+                                            <a ng-clicg> 
+                                                <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive"> 
+                                            </a> 
+                                            </div> 
+                                            <div class="back"> 
+                                                <a ng-click="viewDtail(product._id)"> 
+                                                    <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive"> 
+                                                </a> 
+                                            </div> 
+                                        </div> 
+                                    </div> 
+                                    <a ng-click="viewDtail(product._id)" class="invisible"> 
+                                        <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive"> 
+                                    </a> 
+                                    <div class="text"> 
+                                        <h3> 
+                                            <a ng-click="viewDtail(product._id)"> 
+                                                [[product.nameProduct]]</a> 
+                                        </h3> 
+                                        <p class="price">[[product.price]] Bath.</p> 
+                            <!-- /.product --> 
+                        </div> 
+
+                        
+                            <!-- /.product --> 
+                        </div> 
+
+ 
+                        
+                            <!-- /.product --> 
                         </div>
 
-                        <div class="col-md-3 col-sm-6">
+                      <!--  <div class="col-md-3 col-sm-6">
                             <div class="product same-height">
                                 <div class="flip-container">
                                     <div class="flipper">
@@ -567,12 +577,12 @@
                                     <h3>Fur coat</h3>
                                     <p class="price">$143</p>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- /.product -->
                         </div>
 
 
-                        <div class="col-md-3 col-sm-6">
+                      <!--  <div class="col-md-3 col-sm-6">
                             <div class="product same-height">
                                 <div class="flip-container">
                                     <div class="flipper">
@@ -596,13 +606,13 @@
                                     <p class="price">$143</p>
 
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- /.product -->
                         </div>
 
                     </div>
 
-                    <div class="row same-height-row">
+                <!--    <div class="row same-height-row">
                         <div class="col-md-3 col-sm-6">
                             <div class="box same-height">
                                 <h3>Products viewed recently</h3>
@@ -634,7 +644,7 @@
                                     <p class="price">$143</p>
                                 </div>
                             </div>
-                            <!-- /.product -->
+                            <!-- /.product 
                         </div>
 
                         <div class="col-md-3 col-sm-6">
@@ -661,7 +671,7 @@
                                     <p class="price">$143</p>
                                 </div>
                             </div>
-                            <!-- /.product -->
+                            <!-- /.product 
                         </div>
 
 
@@ -690,10 +700,10 @@
 
                                 </div>
                             </div>
-                            <!-- /.product -->
+                            <!-- /.product 
                         </div>
 
-                    </div>
+                    </div> -->
 
                 </div>
                 <!-- /.col-md-9 -->
@@ -740,90 +750,90 @@
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/bootstrap-hover-dropdown.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-</body>
-<script>
-    var app = angular.module('myApp', []);
+ <script src="js/jquery-1.11.0.min.js"></script> 
+ <script src="js/bootstrap.min.js"></script> 
+ <script src="js/jquery.cookie.js"></script> 
+ <script src="js/waypoints.min.js"></script> 
+ <script src="js/modernizr.js"></script> 
+ <script src="js/bootstrap-hover-dropdown.js"></script> 
+ <script src="js/owl.carousel.min.js"></script> 
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+</body> 
+<script> 
+ var app = angular.module('myApp', []); 
 
-    app.config(function ($httpProvider) {
-        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-    });
-    app.config(function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-    });
+ app.config(function ($httpProvider) { 
+     $httpProvider.defaults.xsrfCookieName = 'csrftoken'; 
+     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken'; 
+ }); 
+ app.config(function ($interpolateProvider) { 
+     $interpolateProvider.startSymbol('[['); 
+     $interpolateProvider.endSymbol(']]'); 
+ }); 
 
-    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+ app.controller('myCtrl', function ($scope, $http, $location, $window) { 
 
-        $scope.myFunction = function () {
-            $http.get("api/islogin")
-                .then(function (response) {
-                    //First function handles success
-                    console.log(response)
-                    $scope.isLogin = true
-                    $scope.username = response.data.username
-                }, function (response) {
-                    //Second function handles error
-                    $scope.isLogin = false
-                });
-            $scope.getProductById($window.localStorage.getItem('idProduct'))
-        }
+     $scope.myFunction = function () { 
+         $http.get("api/islogin") 
+             .then(function (response) { 
+                 //First function handles success 
+                 console.log(response) 
+                 $scope.isLogin = true 
+                 $scope.username = response.data.username 
+             }, function (response) { 
+                 //Second function handles error 
+                 $scope.isLogin = false 
+             }); 
+         $scope.getProductById($window.localStorage.getItem('idProduct')) 
+     } 
 
-        $scope.logout = function () {
-            $http.get("api/logout")
-                .then(function (response) {
-                    //First function handles success
-                    $scope.isLogin = false
-                    window.location.reload(true)
-                }, function (response) {
-                    //Second function handles error
-                    $scope.isLogin = true
-                });
-        }
+     $scope.logout = function () { 
+         $http.get("api/logout") 
+             .then(function (response) { 
+                 //First function handles success 
+                 $scope.isLogin = false 
+                 window.location.reload(true) 
+             }, function (response) { 
+                 //Second function handles error 
+                 $scope.isLogin = true 
+             }); 
+     } 
 
-        $scope.getProductById = function (id) {
-            $http.get("api/product/id/" + id)
-                .then(function (response) {
-                    //First function handles success
-                    console.log(response.data);
-                    $scope.product = response.data.product[0]
-                }, function (response) {
-                    //Second function handles error
-                });
-        }
+     $scope.getProductById = function (id) { 
+         $http.get("api/product/id/" + id) 
+             .then(function (response) { 
+                 //First function handles success 
+                 console.log(response.data); 
+                 $scope.product = response.data.product[0] 
+             }, function (response) { 
+                 //Second function handles error 
+             }); 
+     } 
 
-       $scope.addToCart = function (code) {
-           console.log("api/addtocart/" +code[0]);
-           
-            $http.get("api/addtocart/" + code)
-                .then(function (response) {
-                    //First function handles success
-                    console.log(response.data);
-                    if(response.data.status == "success") {
-                        $scope.quantityInCart = response.data.qty
-                        alert('Add To Cart Success !! : D')
-                    }
-                }, function (response) {
-                    //Second function handles error
-                    console.log(response);
+     $scope.addToCart = function (code) { 
+         console.log("api/addtocart/" + code[0]); 
 
-                });
-        }
+         $http.get("api/addtocart/" + code) 
+             .then(function (response) { 
+                 //First function handles success 
+                 console.log(response.data); 
+                 if (response.data.status == "success") { 
+                     $scope.quantityInCart = response.data.qty 
+                     alert('Add To Cart Success !! : D') 
+                 } 
+             }, function (response) { 
+                 //Second function handles error 
+                 console.log(response); 
 
-        $scope.getProduct = function (category, type) {
-            $window.localStorage.setItem('category', category);
-            $window.localStorage.setItem('type', type);
-            $window.location.href = "category.html"
-        }
-    });
-</script>
+             }); 
+     } 
+
+     $scope.getProduct = function (category, type) { 
+         $window.localStorage.setItem('category', category); 
+         $window.localStorage.setItem('type', type); 
+         $window.location.href = "category.html" 
+     } 
+ }); 
+</script> 
 
 </html>

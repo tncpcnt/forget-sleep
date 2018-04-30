@@ -129,7 +129,7 @@
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="hidden-xs">3 items in cart</span>
+                        <span class="hidden-xs">[[quantityInCart]] items in cart</span>
                     </a>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="basket.html" class="btn btn-primary navbar-btn">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="hidden-sm">3 items in cart</span>
+                        <span class="hidden-sm"> [[quantityInCart]] items in cart</span>
                     </a>
                 </div>
                 <!--/.nav-collapse -->
@@ -467,10 +467,11 @@
                                                 [[product.nameProduct]]</a>
                                         </h3>
                                         <p class="price">[[product.price]] Bath.</p>
-                                        <p class="buttons">
-                                            <a ng-click="viewDtail(product._id)" class="btn btn-default">View detail</a>
-                                            <a href="basket.html" class="btn btn-primary">
-                                                <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        <p class="text-center buttons"> 
+                                            <a ng-click="addToCart([[product.code]])" class="btn btn-primary"> 
+                                                <i class="fa fa-shopping-cart"></i> Add to cart</a> 
+                                            <a href="basket.html" class="btn btn-default"> 
+                                                <i class="fa fa-heart"></i> Add to wishlist</a> 
                                         </p>
                                     </div>
                                     <!-- /.text -->
@@ -527,95 +528,122 @@
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/bootstrap-hover-dropdown.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-</body>
-<script>
-    var app = angular.module('myApp', []);
+ <script src="js/jquery-1.11.0.min.js"></script> 
+ <script src="js/bootstrap.min.js"></script> 
+ <script src="js/jquery.cookie.js"></script> 
+ <script src="js/waypoints.min.js"></script> 
+ <script src="js/modernizr.js"></script> 
+ <script src="js/bootstrap-hover-dropdown.js"></script> 
+ <script src="js/owl.carousel.min.js"></script> 
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+</body> 
+<script> 
+ var app = angular.module('myApp', []); 
 
-    app.config(function ($httpProvider) {
-        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-    });
-    app.config(function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-    });
+ app.config(function ($httpProvider) { 
+     $httpProvider.defaults.xsrfCookieName = 'csrftoken'; 
+     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken'; 
+ }); 
+ app.config(function ($interpolateProvider) { 
+     $interpolateProvider.startSymbol('[['); 
+     $interpolateProvider.endSymbol(']]'); 
+ }); 
 
-    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+ app.controller('myCtrl', function ($scope, $http, $location, $window) { 
 
-        $scope.getProduct = function (category, type) {
-            var data
-            if (category == "" && type == "") {
-                data = {}
-            } else {
-                data = {
-                    "category": category,
-                    "type": type
-                }
-            }
+     $scope.getProduct = function (category, type) { 
+         var data 
+         if (category == "" && type == "") { 
+             data = {} 
+         } else { 
+             data = { 
+                 "category": category, 
+                 "type": type 
+             } 
+         } 
 
-            $http({
-                method: 'POST',
-                url: "api/product/categories",
-                data: JSON.stringify(data)
-            })
-                .then(function (response) {
-                    //First function handles success
-                    $scope.listProduct = response.data.product
-                    console.log(response.data)
-                }, function (response) {
-                    //Second function handles error
-                    console.log(response)
-                });
-        }
+         $http({ 
+             method: 'POST', 
+             url: "api/product/categories", 
+             data: JSON.stringify(data) 
+         }) 
+             .then(function (response) { 
+                 //First function handles success 
+                 $scope.listProduct = response.data.product 
+                 console.log(response.data) 
+             }, function (response) { 
+                 //Second function handles error 
+                 console.log(response) 
+             }); 
+     } 
+     $scope.getProductById = function (id) { 
+         $http.get("api/product/id/" + id) 
+             .then(function (response) { 
+                 //First function handles success 
+                 console.log(response.data); 
+                 $scope.product = response.data.product[0] 
+             }, function (response) { 
+                 //Second function handles error 
+             }); 
+     } 
+     $scope.addToCart = function (code) { 
+         console.log("api/addtocart/" + code[0]); 
 
-        $scope.myFunction = function () {
-            $http.get("api/islogin")
-                .then(function (response) {
-                    //First function handles success
-                    console.log(response)
-                    $scope.isLogin = true
-                    $scope.username = response.data.username
-                }, function (response) {
-                    //Second function handles error
-                    $scope.isLogin = false
-                });
-            var category = $window.localStorage.getItem('category')
-            var type = $window.localStorage.getItem('type')
+         $http.get("api/addtocart/" + code) 
+             .then(function (response) { 
+                 //First function handles success 
+                // console.log(response.data); 
+                 if (response.data.status == "success") { 
+                     $scope.quantityInCart = response.data.qty 
+                     alert('Add To Cart Success !! : D') 
+                 } 
+             }, function (response) { 
+                 //Second function handles error 
+                // console.log(response); 
 
-            if(category != null && type != type)
-                $scope.getProduct("", "")
-            else
-                $scope.getProduct(category, type)
-        }
+             }); 
+     } 
+     $scope.myFunction = function () { 
+         $http.get("api/islogin") 
+             .then(function (response) { 
+                 //First function handles success 
+                 console.log(response) 
+                 $scope.isLogin = true 
+                 $scope.username = response.data.username 
+             }, function (response) { 
+                 //Second function handles error 
+                 $scope.isLogin = false 
+             }); 
+         var category = $window.localStorage.getItem('category') 
+         var type = $window.localStorage.getItem('type') 
 
-        $scope.logout = function () {
-            $http.get("api/logout")
-                .then(function (response) {
-                    //First function handles success
-                    $scope.isLogin = false
-                    window.location.reload(true)
-                }, function (response) {
-                    //Second function handles error
-                    $scope.isLogin = true
-                });
-        }
+         if (category != null && type != type) 
+             $scope.getProduct("", "") 
+         else 
+             $scope.getProduct(category, type) 
+     } 
 
-        $scope.viewDtail = function (idProduct) {
-            $window.localStorage.setItem('idProduct', idProduct);
-            $window.location.href = "detail.html"
-        }
-        
+     $scope.logout = function () { 
+         $http.get("api/logout") 
+             .then(function (response) { 
+                 //First function handles success 
+                 $scope.isLogin = false 
+                 window.location.reload(true) 
+             }, function (response) { 
+                 //Second function handles error 
+                 $scope.isLogin = true 
+             }); 
+     } 
 
-    });
-    
-</script>
+     $scope.viewDtail = function (idProduct) { 
+         $window.localStorage.setItem('idProduct', idProduct); 
+         $window.location.href = "detail.html" 
+     } 
+ }); 
+
+
+
+
+</script> 
 
 </html>
