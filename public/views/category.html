@@ -61,7 +61,7 @@
                         <a>[[username]]</a>
                     </li>
                     <li ng-if="isLogin == true">
-                        <a ng-click="logout()" >Logout</a>
+                        <a ng-click="logout()">Logout</a>
                     </li>
                     <li>
                         <a href="contact.html">Contact</a>
@@ -138,10 +138,13 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active">
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Men <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -149,30 +152,16 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                 <li>
+                                                <li>
                                                     <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-                                               
+
                                             </ul>
                                         </div>
-                                        
-                                    </div>
-                                </div>
-                                <!-- /.yamm-content -->
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">WOMEN <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                               <li>
+                                                <li>
                                                     <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
@@ -181,66 +170,44 @@
                                                 <li>
                                                     <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
-                                               
                                             </ul>
                                         </div>
-                                        
+                                        <div class="col-sm-3">
+                                            <h5>Kids</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>MASCOT</h5>
+                                            <ul>
+
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
                                     </div>
+
                                 </div>
-                                
                             </li>
                         </ul>
                     </li>
 
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CHILD <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>CHILD</h5>
-                                            <ul>
-                                                <li>
-                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                 </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MASCOT <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>MASCOT</h5>
-                                            <ul>
-                                                <li>
-                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                 </li>
-                        </ul>
-                    </li>
-                        
-                        
+
                 </ul>
 
             </div>
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
-                
+
                 <div class="navbar-collapse collapse right" id="point-overview">
                     <a href="point.html" class="btn btn-primary navbar-btn">
                         <i class="fa fa-star"></i>
@@ -265,20 +232,19 @@
 
             </div>
 
-            <div class="collapse clearfix" id="search">
+            <div class="collapse clearfix" id="search"
 
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                    <div class="form-group">
+                        <input type="text" ng-model="name" name=nameProduct class="form-control" placeholder="Search....">
                         <span class="input-group-btn">
 
-                            <button type="submit" class="btn btn-primary">
+                            <button  ng-click="getSearch(name)" class="btn btn-default">
                                 <i class="fa fa-search"></i>
                             </button>
 
                         </span>
                     </div>
-                </form>
+              
 
             </div>
             <!--/.nav-collapse -->
@@ -377,58 +343,7 @@
                     </div>
 
 
-                    <div class="panel panel-default sidebar-menu">
-
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Colours
-                                <a class="btn btn-xs btn-danger pull-right" href="#">
-                                    <i class="fa fa-times-circle"></i> Clear</a>
-                            </h3>
-                        </div>
-
-                        <div class="panel-body">
-
-                            <form>
-                                <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="colour white"></span> White (14)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="colour blue"></span> Blue (10)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="colour green"></span> Green (20)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="colour yellow"></span> Yellow (13)
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            <span class="colour red"></span> Red (10)
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-default btn-sm btn-primary">
-                                    <i class="fa fa-pencil"></i> Apply</button>
-
-                            </form>
-
-                        </div>
-                    </div>
+                    
 
                     <!-- *** MENUS AND FILTERS END *** -->
 
@@ -439,9 +354,9 @@
                     </div>
                 </div>
 
-               <div class="col-md-9">
-                     <div class="box">
-                     <!--   <h1>Ladies</h1>
+                <div class="col-md-9">
+                    <div class="box">
+                        <!--   <h1>Ladies</h1>
                         <p>In our Ladies department we offer wide selection of the best products we have found and carefully
                             selected worldwide.</p>
                     </div>
@@ -481,170 +396,196 @@
                         </div>
                     </div> -->
 
-                    <div class="row products">
-                        <div ng-repeat="product in listProduct">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product">
-                                    <div class="flip-container">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <a ng-clicg>
-                                                    <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
-                                                </a>
-                                            </div>
-                                            <div class="back">
-                                                <a ng-click="viewDtail(product._id)">
-                                                    <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
-                                                </a>
+                        <div class="row products">
+                            <div ng-repeat="product in listProduct">
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="product">
+                                        <div class="flip-container">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <a ng-clicg>
+                                                        <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
+                                                    </a>
+                                                </div>
+                                                <div class="back">
+                                                    <a ng-click="viewDtail(product._id)">
+                                                        <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
+                                        <a ng-click="viewDtail(product._id)" class="invisible">
+                                            <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
+                                        </a>
+                                        <div class="text">
+                                            <h3>
+                                                <a ng-click="viewDtail(product._id)">
+                                                    [[product.nameProduct]]</a>
+                                            </h3>
+                                            <p class="price">[[product.price]] Bath.</p>
+                                            <p class="text-center buttons">
+                                                <a ng-click="addToCart([[product.code]])" class="btn btn-primary">
+                                                    <i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                                <a ng-click="addToFav([[product.code]])" class="btn btn-default">
+                                                    <i class="fa fa-heart"></i> Add to wishlist</a>
+                                            </p>
+                                        </div>
+                                        <!-- /.text -->
                                     </div>
-                                    <a ng-click="viewDtail(product._id)" class="invisible">
-                                        <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
-                                    </a>
-                                    <div class="text">
-                                        <h3>
-                                            <a ng-click="viewDtail(product._id)">
-                                                [[product.nameProduct]]</a>
-                                        </h3>
-                                        <p class="price">[[product.price]] Bath.</p>
-                                        <p class="text-center buttons"> 
-                                            <a ng-click="addToCart([[product.code]])" class="btn btn-primary"> 
-                                                <i class="fa fa-shopping-cart"></i> Add to cart</a> 
-                                            <a ng-click="addToFav([[product.code]])" class="btn btn-default"> 
-                                                <i class="fa fa-heart"></i> Add to wishlist</a> 
-                                        </p>
-                                    </div>
-                                    <!-- /.text -->
                                 </div>
+                                <!-- /.product -->
                             </div>
-                            <!-- /.product -->
+                            <!-- /.col-md-4 -->
                         </div>
-                        <!-- /.col-md-4 -->
+                        <!-- /.products -->
+
                     </div>
-                    <!-- /.products -->
-
+                    <!-- /.col-md-9 -->
                 </div>
-                <!-- /.col-md-9 -->
+                <!-- /.container -->
             </div>
-            <!-- /.container -->
-        </div>
-        <!-- /#content -->
+            <!-- /#content -->
 
 
-        <!-- *** FOOTER ***
+            <!-- *** FOOTER ***
  _________________________________________________________ -->
 
-        <!-- /#footer -->
+            <!-- /#footer -->
 
-        <!-- *** FOOTER END *** -->
-
-
+            <!-- *** FOOTER END *** -->
 
 
-        <!-- *** COPYRIGHT ***
+
+
+            <!-- *** COPYRIGHT ***
  _________________________________________________________ -->
-        <div id="copyright">
-            <div class="container">
-                <div class="col-md-6">
-                    <p class="pull-left">© 2018 Your name goes here.</p>
+            <div id="copyright">
+                <div class="container">
+                    <div class="col-md-6">
+                        <p class="pull-left">© 2018 Your name goes here.</p>
 
-                </div>
-                <div class="col-md-6">
-                    
+                    </div>
+                    <div class="col-md-6">
+
                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
+            <!-- *** COPYRIGHT END *** -->
+
+
+
         </div>
-        <!-- *** COPYRIGHT END *** -->
-
-
-
-    </div>
-    <!-- /#all -->
+        <!-- /#all -->
 
 
 
 
-    <!-- *** SCRIPTS TO INCLUDE ***
+        <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
- <script src="js/jquery-1.11.0.min.js"></script> 
- <script src="js/bootstrap.min.js"></script> 
- <script src="js/jquery.cookie.js"></script> 
- <script src="js/waypoints.min.js"></script> 
- <script src="js/modernizr.js"></script> 
- <script src="js/bootstrap-hover-dropdown.js"></script> 
- <script src="js/owl.carousel.min.js"></script> 
- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
-</body> 
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/bootstrap-hover-dropdown.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
 <script> 
- var app = angular.module('myApp', []); 
+    var app = angular.module('myApp', []);
 
- app.config(function ($httpProvider) { 
-     $httpProvider.defaults.xsrfCookieName = 'csrftoken'; 
-     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken'; 
- }); 
- app.config(function ($interpolateProvider) { 
-     $interpolateProvider.startSymbol('[['); 
-     $interpolateProvider.endSymbol(']]'); 
- }); 
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
 
- app.controller('myCtrl', function ($scope, $http, $location, $window) { 
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
 
-     $scope.getProduct = function (category, type) { 
-         var data 
-         if (category == "" && type == "") { 
-             data = {} 
-         } else { 
-             data = { 
-                 "category": category, 
-                 "type": type 
-             } 
-         } 
+        $scope.getProduct = function (category, type) {
+            var data
+            if (category == "" && type == "") {
+                data = {}
+            } else {
+                data = {
+                    "category": category,
+                    "type": type
+                }
+            }
 
-         $http({ 
-             method: 'POST', 
-             url: "api/product/categories", 
-             data: JSON.stringify(data) 
-         }) 
-             .then(function (response) { 
-                 //First function handles success 
-                 $scope.listProduct = response.data.product 
-                 console.log(response.data) 
-             }, function (response) { 
-                 //Second function handles error 
-                 console.log(response) 
-             }); 
-     } 
-     $scope.getProductById = function (id) { 
-         $http.get("api/product/id/" + id) 
-             .then(function (response) { 
-                 //First function handles success 
-                 console.log(response.data); 
-                 $scope.product = response.data.product[0] 
-             }, function (response) { 
-                 //Second function handles error 
-             }); 
-     } 
-     $scope.addToCart = function (code) { 
-         console.log("api/addtocart/" + code[0]); 
+            $http({
+                method: 'POST',
+                url: "api/product/categories",
+                data: JSON.stringify(data)
+            })
+                .then(function (response) {
+                    //First function handles success 
+                    $scope.listProduct = response.data.product
+                    console.log(response.data)
+                }, function (response) {
+                    //Second function handles error 
+                    console.log(response)
+                });
+        }
+        $scope.getProductById = function (id) {
+            $http.get("api/product/id/" + id)
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response.data);
+                    $scope.product = response.data.product[0]
+                }, function (response) {
+                    //Second function handles error 
+                });
+        }
+        $scope.addToCart = function (code) {
+            console.log("api/addtocart/" + code[0]);
 
-         $http.get("api/addtocart/" + code) 
-             .then(function (response) { 
-                 //First function handles success 
-                // console.log(response.data); 
-                 if (response.data.status == "success") { 
-                     $scope.quantityInCart = response.data.qty 
-                     alert('Add To Cart Success !! : D') 
-                 } 
-             }, function (response) { 
-                 //Second function handles error 
-                // console.log(response); 
+            $http.get("api/addtocart/" + code)
+                .then(function (response) {
+                    //First function handles success 
+                    // console.log(response.data); 
+                    if (response.data.status == "success") {
+                        $scope.quantityInCart = response.data.qty
+                        alert('Add To Cart Success !! : D')
+                    }
+                }, function (response) {
+                    //Second function handles error 
+                    // console.log(response); 
 
-             }); 
-     } 
-     $scope.addToFav = function (code) {
+                });
+        }
+        $scope.getSearch = function (nameProduct) {
+            var data
+            console.log(nameProduct);
+            
+            if (nameProduct == "") {
+                data = {}
+            } else {
+                data = {
+                    "nameProduct": nameProduct
+                }
+            }
+
+            $http({
+                method: 'POST',
+                url: "api/search",
+                data: JSON.stringify(data)
+            })
+                .then(function (response) {
+                    //First function handles success 
+                    $scope.listProduct = response.data.product
+                    console.log(response.data)
+                }, function (response) {
+                    //Second function handles error 
+                    console.log(response)
+                });
+        }
+        $scope.addToFav = function (code) {
             console.log("api/addtocart/" + code[0]);
 
             $http.get("api/addtocart/" + code)
@@ -653,55 +594,55 @@
                     console.log(response.data);
                     if (response.data.status == "success") {
                         $scope.quantityInCart = response.data.qty
-                       // alert('Add To Fav !! : D')
+                        // alert('Add To Fav !! : D')
                     }
                 }, function (response) {
                     //Second function handles error 
-                   // console.log(response);
+                    // console.log(response);
 
                 });
         }
-     $scope.myFunction = function () { 
-         $http.get("api/islogin") 
-             .then(function (response) { 
-                 //First function handles success 
-                 console.log(response) 
-                 $scope.isLogin = true 
-                 $scope.username = response.data.username 
-             }, function (response) { 
-                 //Second function handles error 
-                 $scope.isLogin = false 
-             }); 
-         var category = $window.localStorage.getItem('category') 
-         var type = $window.localStorage.getItem('type') 
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error 
+                    $scope.isLogin = false
+                });
+            var category = $window.localStorage.getItem('category')
+            var type = $window.localStorage.getItem('type')
 
-         if (category != null && type != type) 
-             $scope.getProduct("", "") 
-         else 
-             $scope.getProduct(category, type) 
-     } 
+            if (category != null && type != type)
+                $scope.getProduct("", "")
+            else
+                $scope.getProduct(category, type)
+        }
 
-     $scope.logout = function () { 
-         $http.get("api/logout") 
-             .then(function (response) { 
-                 //First function handles success 
-                 $scope.isLogin = false 
-                 window.location.reload(true) 
-             }, function (response) { 
-                 //Second function handles error 
-                 $scope.isLogin = true 
-             }); 
-     } 
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success 
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error 
+                    $scope.isLogin = true
+                });
+        }
 
-     $scope.viewDtail = function (idProduct) { 
-         $window.localStorage.setItem('idProduct', idProduct); 
-         $window.location.href = "detail.html" 
-     } 
- }); 
-
-
+        $scope.viewDtail = function (idProduct) {
+            $window.localStorage.setItem('idProduct', idProduct);
+            $window.location.href = "detail.html"
+        }
+    });
 
 
-</script> 
+
+
+</script>
 
 </html>
