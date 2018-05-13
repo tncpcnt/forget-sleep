@@ -479,8 +479,6 @@
                     $scope.listCart = response.data.items
                     $scope.totalPrice = response.data.totalPrice
                     $scope.quantityInCart = response.data.qty
-                    console.log($scope.quantityInCart)
-
                 }, function (response) {
                     //Second function handles error 
                 });
@@ -490,7 +488,6 @@
             $http.get("api/product/id/" + id)
                 .then(function (response) {
                     //First function handles success 
-                    console.log(response.data);
                     $scope.product = response.data.product[0]
                 }, function (response) {
                     //Second function handles error 
