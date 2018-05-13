@@ -1,3 +1,5 @@
+
+
 module.exports = (() => {
     const express = require('express');
     const path = require('path');
@@ -63,7 +65,7 @@ module.exports = (() => {
 
     router.delete('/product/:id', function (req, res) {
         var query = req.params.id;
-        product.remove({ _id: query }, function(err) {
+        product.remove({ _id: query }, function (err) {
             if (err) {
             }
             else {
@@ -71,7 +73,7 @@ module.exports = (() => {
             }
         });
     })
-    
+
 
     router.get('/product/categories/:category', function (req, res) {
         var query = req.params.category;
@@ -143,6 +145,26 @@ module.exports = (() => {
             }
         })
     })
+
+    router.post('/search', function (req, res) {
+        var query
+        if (req.body.nameProduct) {
+            var regexValue = '\.*' + req.body.nameProduct + '\.';
+            query = { "nameProduct": { $regex: regexValue, $options: "i" } }
+        }
+
+        product.find(query, function (err, result) {
+            if (err) {
+                console.log(err.errmsg);
+                res.end('fail');
+            } else {
+                res.json({
+                    'product': result
+                });
+            }
+        })
+    })
+    
 
 
     return router;

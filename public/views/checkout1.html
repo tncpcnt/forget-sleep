@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Forget Sleep Shopping Online
     </title>
 
     <meta name="keywords" content="">
@@ -40,7 +40,7 @@
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
     <div id="top">
@@ -129,7 +129,7 @@
                     <li class="active"><a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Men <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,60 +137,110 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                 <li>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                
+                                               
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3">
-                                            <h5>WOMEN</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                <li><a href="category.html">Sexy</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>CHILD</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>MASCOT</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                            
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
-
                     
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">WOMEN <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>WOMEN</h5>
+                                            <ul>
+                                               <li>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
+                                                </li>
+                                               
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CHILD <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>CHILD</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                 </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MASCOT <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>MASCOT</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                 </li>
+                        </ul>
+                    </li>
+                        
+                        
                 </ul>
 
             </div>
             <!--/.nav-collapse -->
 
-            <div class="navbar-buttons">
+             <div class="navbar-buttons">
+                 
+                 <div class="navbar-collapse collapse right" id="point-overview">
+                    <a href="point.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-star"></i>
+                        <span class="hidden-sm">You have 30 Point</span>
+                    </a>
+                </div>
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-sm">items in cart</span>
+                    </a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -235,7 +285,7 @@
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a>
                         </li>
-                        <li>Checkout - Address</li>
+                        <li>Payment method</li>
                     </ul>
                 </div>
 
@@ -243,111 +293,125 @@
 
                     <div class="box">
                         <form method="post" action="checkout2.html">
-                            <h1>Checkout</h1>
+                            <h1>Checkout - Payment method</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li class="active"><a href="http://localhost/ForgetSleep/checkout1.html"><i class="fa fa-map-marker"></i><br>Address</a>
+                                <li class="active"><a href="http://localhost/PhpProject2/public/views/checkout1.html"><i class="fa fa-money"></i><br> Payment method</a>
                                 </li>
-                                <li class="disabled"><a href="http://localhost/ForgetSleep/checkout3.html"><i class="fa fa-money"></i><br>Payment Method</a>
+                                <li class="disabled"><a href="http://localhost/ForgetSleep/checkout2.html"><i class="fa fa-map-marker"></i><br>Address</a>
                                 </li>
-                                <li class="disabled"><a href="http://localhost/ForgetSleep/checkout2.html"><i class="fa fa-truck"></i><br>Delivery Method</a>
+                                <li class="disabled"><a href="http://localhost/ForgetSleep/checkout3.html"><i class="fa fa-truck"></i><br>Transfer Method</a>
                                 </li>
                                 <li class="disabled"><a href="http://localhost/ForgetSleep/checkout4.html"><i class="fa fa-eye"></i><br>Order Review</a>
                                 </li>
                             </ul>
 
+                            
+                                
                             <div class="content">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="firstname">Firstname</label>
-                                            <input type="text" class="form-control" id="firstname">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="lastname">Lastname</label>
-                                            <input type="text" class="form-control" id="lastname">
-                                        </div>
-                                    </div>
+                                    
+                                    <div class="col-sm-12">
+                                        <div class="box payment-method">
+
+
+                                            <article class="card">
+                                    <div class="card-body center">
+
+                                    <ul class="nav bg-light nav-tabs nav-pills rounded nav-fill mb-3" role="tablist">
+                                    <li class="nav-item">
+                                	<a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
+                                    	<i class="fa fa-credit-card"></i> Credit Card</a></li>
+                                    
+                                    <li class="nav-item">
+                                    	<a class="nav-link active" data-toggle="pill" href="#nav-tab-bank">
+                                	<i class="fa fa-bank"></i>  Bank Transfer</a></li>
+                                    </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="nav-tab-card">
+                               
+                                <div class="form-group">
+                                <label for="username">Full name (on the card)</label>
+                                <input type="text" class="form-control" name="username" placeholder="" required="">
+                            </div> <!-- form-group.// -->
+                            
+                           
+                            <div class="form-group">
+                            	<label for="cardNumber">Card number</label>
+                         	<div class="input-group">
+                            	<input type="text" class="form-control" name="cardNumber" placeholder="**** **** **** ****">
+                                    <div class="input-group-append">
+				<span class="input-group-text text-muted">
+					<i class="fa fa-cc-visa"></i>   <i class="fa fa-cc-amex"></i>   
+					<i class="fa fa-cc-mastercard"></i> 
+				</span>
+                                 </div>
                                 </div>
-                                <!-- /.row -->
+                            </div>
+                             <!-- form-group.// -->
 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="company">Company</label>
-                                            <input type="text" class="form-control" id="company">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="street">Street</label>
-                                            <input type="text" class="form-control" id="street">
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                       <label><span class="hidden-xs">Expiration</span> </label>
+                                     	<div class="input-group">
+                            		<input type="number" class="form-control" placeholder="MM" name="">
+                                        <input type="number" class="form-control" placeholder="YY" name="">
+                                	</div>
+                                     </div>
+                              </div>
+                            <div class="col-sm-2">
+                            <div class="form-group">
+                                <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV <i class="fa fa-question-circle"></i></label>
+                             <input type="number" class="form-control" required="***">
+                            </div> <!-- form-group.// -->
+                            </div>
+                            </div> <!-- row.// -->
+                            <button class="subscribe btn btn-primary btn-block" type="button"> Confirm  </button>
+                           
                                 </div>
-                                <!-- /.row -->
+                         <!-- tab-pane.// -->
+                        
+                            <div id="nav-tab-bank" class="tab-pane fade" >
+                            
+                                <dl class="param">
+                                    <dt>BANK: </dt>
+                                    <dd>Krung Thai Bank</dd>
+                                </dl>
+                                <dl class="param">
+                                     <dt>Accaunt number: </dt>
+                                     <dd> 12345678912345</dd>
+                                </dl>
+                                <dl class="param">
+                                     <dt>IBAN: </dt>
+                                     <dd> 123456789</dd>
+                                </dl>
+                            <p><strong>Note:</strong> โอนแล้วแจ้งหลักฐานด้วยโว้ยยย </p>
+                           
+                            </div> <!-- tab-pane.// -->
+                             <!-- tab-content .// -->
 
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="city">Company</label>
-                                            <input type="text" class="form-control" id="city">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="zip">ZIP</label>
-                                            <input type="text" class="form-control" id="zip">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="state">State</label>
-                                            <select class="form-control" id="state"></select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="country">Country</label>
-                                            <select class="form-control" id="country"></select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="phone">Telephone</label>
-                                            <input type="text" class="form-control" id="phone">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="text" class="form-control" id="email">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="form-group">
-                                            <input type="checkbox" name="address" value="add" >
-                                            <label for="email">Send by address saved</label>
+                            </div> 
+                             </article>
                                             
                                         </div>
                                     </div>
 
                                 </div>
                                 <!-- /.row -->
+
                             </div>
 
                             <div class="box-footer">
                                 <div class="pull-left">
                                     <a href="basket.html" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
                                 </div>
-                                <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary">Continue to Delivery Method<i class="fa fa-chevron-right"></i>
+                                <div class="pull-right" >
+                                    <button type="submit" class="btn btn-primary">Continue to Address<i class="fa fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                       </form>
                     </div>
                     <!-- /.box -->
 

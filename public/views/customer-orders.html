@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Forget Sleep Shopping Online
     </title>
 
     <meta name="keywords" content="">
@@ -129,7 +129,7 @@
                     <li class="active"><a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Men <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,57 +137,105 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                 <li>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                
+                                               
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3">
-                                            <h5>WOMEN</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                <li><a href="category.html">Sexy</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>CHILD</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>MASCOT</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                            
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
-
                     
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">WOMEN <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>WOMEN</h5>
+                                            <ul>
+                                               <li>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
+                                                </li>
+                                               
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CHILD <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>CHILD</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                 </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MASCOT <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h5>MASCOT</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                 </li>
+                        </ul>
+                    </li>
+                        
+                        
                 </ul>
 
             </div>
+            
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
+                
+                <div class="navbar-collapse collapse right" id="point-overview">
+                    <a href="point.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-star"></i>
+                        <span class="hidden-sm">Point</span>
+                    </a>
+                </div>
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
@@ -236,7 +284,7 @@
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a>
                         </li>
-                        <li>My orders</li>
+                        <li>Notification</li>
                     </ul>
 
                 </div>
@@ -254,7 +302,7 @@
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li class="active">
-                                    <a href="customer-orders.html"><i class="fa fa-list"></i> My orders</a>
+                                    <a href="customer-orders.html"><i class="fa fa-list"></i>Notification</a>
                                 </li>
                                 <li>
                                     <a href="customer-wishlist.html"><i class="fa fa-heart"></i> My wishlist</a>
@@ -276,9 +324,9 @@
 
                 <div class="col-md-9" id="customer-orders">
                     <div class="box">
-                        <h1>My orders</h1>
+                        <h1>Notification</h1>
 
-                        <p class="lead">Your orders on one place.</p>
+                        <p class="lead">Your notification on one place.</p>
                         <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
 
                         <hr>
@@ -291,53 +339,39 @@
                                         <th>Date</th>
                                         <th>Total</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Invoice</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                   
+                                    
                                     <tr>
                                         <th># 1735</th>
-                                        <td>22/06/2013</td>
-                                        <td>$ 150.00</td>
-                                        <td><span class="label label-info">Being prepared</span>
+                                        <td>06/05/2018</td>
+                                        <td>150.00</td>
+                                        <td><span class="label label-success">Sent</span>
                                         </td>
-                                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
+                                        <td><a href="invoice.html" class="btn btn-primary btn-sm">View</a>
+                                        </td>
+                                    </tr> 
+                                    
+                                    <tr>
+                                        <th># 1735</th>
+                                        <td>06/05/2018</td>
+                                        <td>150.00</td>
+                                        <td><span class="label label-success">Sent</span>
+                                        </td>
+                                        <td><a href="invoice.html" class="btn btn-primary btn-sm">View</a>
                                         </td>
                                     </tr>
+                                    
                                     <tr>
                                         <th># 1735</th>
-                                        <td>22/06/2013</td>
-                                        <td>$ 150.00</td>
-                                        <td><span class="label label-info">Being prepared</span>
+                                        <td>02/05/2018</td>
+                                        <td>150.00</td>
+                                        <td><span class="label label-info">Wait for shipping</span>
                                         </td>
-                                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th># 1735</th>
-                                        <td>22/06/2013</td>
-                                        <td>$ 150.00</td>
-                                        <td><span class="label label-success">Received</span>
-                                        </td>
-                                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th># 1735</th>
-                                        <td>22/06/2013</td>
-                                        <td>$ 150.00</td>
-                                        <td><span class="label label-danger">Cancelled</span>
-                                        </td>
-                                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th># 1735</th>
-                                        <td>22/06/2013</td>
-                                        <td>$ 150.00</td>
-                                        <td><span class="label label-warning">On hold</span>
-                                        </td>
-                                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
+                                        <td><a href="invoice.html" class="btn btn-primary btn-sm">View</a>
                                         </td>
                                     </tr>
                                 </tbody>

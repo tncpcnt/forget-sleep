@@ -45,6 +45,8 @@ module.exports = (() => {
                 });
             }
         });
+       
+
     });
 
     router.get('/cart', function (req, res) {
@@ -63,6 +65,8 @@ module.exports = (() => {
             });
         }
     });
+
+    
 
     router.get('/check_cart', function (req, res) {
         res.json({
@@ -98,42 +102,9 @@ module.exports = (() => {
     });
 
 
-    router.get('/buy', function (req, res) {
-        if (!req.session.cart) {
-            res.json({
-                'status': 'empty'
-            });
-        } else {
-            var cart = new Cart(req.session.cart);
-            var tmp = cart.generateArray();
-            var tmp2 = tmp.map(function (a) {
-                return {
-                    'product': a.item._id,
-                    'amount': a.qty
-                };
-            })
-            var createObj = {};
-            createObj['user'] = req.session.user_id;
-            createObj['products'] = tmp2;
-            ModelControllers.transaction.createTransaction(createObj, (err, doc) => {
-                delete req.session.cart;
-                if (err) {
-                    res.json({
-                        'status': 'fail'
-                    });
-                    return;
-                } else
-                    res.json({
-                        'status': 'success'
-                    });
-                return;
-            })
-            return;
-
-        }
-    });
 
     router.get('/recommend', function (req, res) {
+        mo
         var cart = new Cart(req.session.cart);
         var tmp = cart.generateArray();
         ModelControllers.transaction.getRecomend(tmp, (err, doc) => {

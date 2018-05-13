@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Forget Sleep Shopping Online
     </title>
 
     <meta name="keywords" content="">
@@ -40,23 +40,30 @@
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
     <!-- *** TOPBAR ***
  _________________________________________________________ -->
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake"><font color="#ffffff">Promotion</font></a>  <a href="#">Get flat 35% off on orders over $50!</a>
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
+                    <font color="#ffffff">Promotion</font>
+                </a>
+                <a href="#">Get flat 35% off on orders over $50!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="register.html">Register</a>
+                    <li>
+                        <a href="register.html">Register</a>
                     </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li>
+                        <a href="contact.html">Contact</a>
                     </li>
-                    <li><a href="#">Recently viewed</a>
+                    <li>
+                        <a href="#">Recently viewed</a>
                     </li>
                 </ul>
             </div>
@@ -79,13 +86,17 @@
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-sign-in"></i> Log in</button>
                             </p>
 
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted">
+                            <a href="register.html">
+                                <strong>Register now</strong>
+                            </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -105,7 +116,8 @@
 
                 <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
                     <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs">
+                    <span class="sr-only">Obaju - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -117,7 +129,8 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-xs">[[quantityInCart]] items in cart</span>
                     </a>
                 </div>
             </div>
@@ -126,10 +139,13 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active">
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,60 +153,73 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                
+
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                                 </li>
-                                                <li><a href="category.html">Sexy</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-                                            <h5>CHILD</h5>
+                                            <h5>Kids</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
+
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
-                                            
+
                                         </div>
                                     </div>
+
                                 </div>
-                                <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
 
-                    
+
                 </ul>
 
             </div>
             <!--/.nav-collapse -->
-
             <div class="navbar-buttons">
 
+                <div class="navbar-collapse collapse right" id="point-overview">
+                    <a href="point.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-star"></i>
+                        <span class="hidden-sm">You have 30 Point</span>
+                    </a>
+                </div>
+                <!--/.nav-collapse -->
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-sm">items in cart</span>
+                    </a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -203,6 +232,8 @@
 
             </div>
 
+
+
             <div class="collapse clearfix" id="search">
 
                 <form class="navbar-form" role="search">
@@ -210,9 +241,11 @@
                         <input type="text" class="form-control" placeholder="Search">
                         <span class="input-group-btn">
 
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
 
-		    </span>
+                        </span>
                     </div>
                 </form>
 
@@ -233,25 +266,46 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li>
+                            <a href="#">Home</a>
                         </li>
-                        <li>Checkout - Order review</li>
+                        <li>
+                            <a href="http://localhost/ForgetSleep/checkout1.html">Payment method</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost/ForgetSleep/checkout2.html">Address</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost/ForgetSleep/checkout3.html">Transfer Method</a>
+                        </li>
+                        <li>Order Review</li>
                     </ul>
                 </div>
 
                 <div class="col-md-9" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="checkout4.html">
                             <h1>Checkout - Order review</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li><a href="checkout1.html"><i class="fa fa-map-marker"></i><br>Address</a>
+                               <!-- <li>
+                                    <a href="checkout1.html">
+                                        <i class="fa fa-money"></i>
+                                        <br>Payment Method</a>
+                                </li> -->
+                                <li>
+                                    <a href="checkout2.html">
+                                        <i class="fa fa-map-marker"></i>
+                                        <br>Address</a>
                                 </li>
-                                <li><a href="checkout2.html"><i class="fa fa-truck"></i><br>Delivery Method</a>
-                                </li>
-                                <li><a href="checkout3.html"><i class="fa fa-money"></i><br>Payment Method</a>
-                                </li>
-                                <li class="active"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
+                               <!-- <li>
+                                    <a href="checkout3.html">
+                                        <i class="fa fa-truck"></i>
+                                        <br>Transfer Method</a>
+                                </li> -->
+                                <li class="active">
+                                    <a href="checkout4.html">
+                                        <i class="fa fa-eye"></i>
+                                        <br>Order Review</a>
                                 </li>
                             </ul>
 
@@ -263,42 +317,28 @@
                                                 <th colspan="2">Product</th>
                                                 <th>Quantity</th>
                                                 <th>Unit price</th>
-                                                <th>Discount</th>
-                                                <th>Total</th>
+                                                <th colspan="2">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr ng-repeat="product in listCart">
                                                 <td>
                                                     <a href="#">
-                                                        <img src="img/detailsquare.jpg" alt="White Blouse Armani">
+                                                        <img ng-src="pic/[[product.item.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="White Blouse Armani">
                                                     </a>
                                                 </td>
-                                                <td><a href="#">White Blouse Armani</a>
-                                                </td>
-                                                <td>2</td>
-                                                <td>$123.00</td>
-                                                <td>$0.00</td>
-                                                <td>$246.00</td>
-                                            </tr>
-                                            <tr>
                                                 <td>
-                                                    <a href="#">
-                                                        <img src="img/basketsquare.jpg" alt="Black Blouse Armani">
-                                                    </a>
+                                                    <a href="#" [[product.item.nameProduct]]</a>
                                                 </td>
-                                                <td><a href="#">Black Blouse Armani</a>
-                                                </td>
-                                                <td>1</td>
-                                                <td>$200.00</td>
-                                                <td>$0.00</td>
-                                                <td>$200.00</td>
+                                                <td>[[product.qty]] sets</td>
+                                                <td>[[product.item.price]] Bath</td>
+                                                <td>[[product.price]] Bath</td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th colspan="5">Total</th>
-                                                <th>$446.00</th>
+                                                <th colspan="2">[[totalPrice]] Bath</th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -310,14 +350,23 @@
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="checkout3.html" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to Payment method</a>
+                                    <a href="checkout3.html" class="btn btn-default">
+                                        <i class="fa fa-chevron-left"></i>Back to Payment method</a>
                                 </div>
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary">Place an order<i class="fa fa-chevron-right"></i>
-                                    </button>
+                                    <form method="post" action="https://www.thaiepay.com/epaylink/payment.aspx">
+                                        <input type="hidden" name="refno" value="34234234324">
+                                        <input type="hidden" name="merchantid" value="00000500">
+                                        <input type="hidden" name="customeremail" value=[[username]]>
+                                        <input type="hidden" name="productdetail" value="Testing Product">
+                                        <input type="hidden" name="cc" value="00">
+                                        <input type="hidden" name="returnurl" value="http://localhost:3000/">
+                                        <input type="hidden" name="total" value=[[totalPrice*1.07]]>
+                                        <input class="btn btn-default" type="submit" name="Submit" value="Payment">
+
+                                    </form>
                                 </div>
                             </div>
-                        </form>
                     </div>
                     <!-- /.box -->
 
@@ -326,7 +375,6 @@
                 <!-- /.col-md-9 -->
 
                 <div class="col-md-3">
-
                     <div class="box" id="order-summary">
                         <div class="box-header">
                             <h3>Order summary</h3>
@@ -338,27 +386,21 @@
                                 <tbody>
                                     <tr>
                                         <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <th>[[totalPrice]] Bath</th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
-                                        <th>$10.00</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Tax</td>
-                                        <th>$0.00</th>
+                                        <td>VAT</td>
+                                        <th>7 %</th>
                                     </tr>
                                     <tr class="total">
-                                        <td>Total</td>
-                                        <th>$456.00</th>
+                                        <td>TOTAL</td>
+                                        <th>[[totalPrice*1.07]] Bath</th>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
-
-                </div>
                 <!-- /.col-md-3 -->
 
             </div>
@@ -369,7 +411,7 @@
 
         <!-- *** FOOTER ***
  _________________________________________________________ -->
-        
+
         <!-- /#footer -->
 
         <!-- *** FOOTER END *** -->
@@ -386,8 +428,10 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> & <a href="https://fity.cz">Fity</a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    <p class="pull-right">Template by
+                        <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> &
+                        <a href="https://fity.cz">Fity</a>
+                        <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>
             </div>
@@ -400,7 +444,7 @@
     <!-- /#all -->
 
 
-    
+
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -412,12 +456,105 @@
     <script src="js/bootstrap-hover-dropdown.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/front.js"></script>
-
-
-
-
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
+
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error 
+                    $scope.isLogin = false
+                });
+            $scope.getProductInCart()
+            $scope.getProductById($window.localStorage.getItem('idProduct'))
+        }
+
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success 
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error 
+                    $scope.isLogin = true
+                });
+        }
+
+        $scope.getProductInCart = function () {
+            $http.get("api/cart")
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response.data);
+                    $scope.listCart = response.data.items
+                    $scope.totalPrice = response.data.totalPrice
+                    $scope.quantityInCart = response.data.qty
+                    console.log($scope.quantityInCart)
+
+                }, function (response) {
+                    //Second function handles error 
+                });
+        }
+        $scope.getProductById = function (id) {
+            $http.get("api/product/id/" + id)
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response.data);
+                    $scope.product = response.data.product[0]
+                }, function (response) {
+                    //Second function handles error 
+                });
+        }
+
+        $scope.getProduct = function (category, type) {
+            $window.localStorage.setItem('category', category);
+            $window.localStorage.setItem('type', type);
+            $window.location.href = "category.html"
+        }
+        $scope.dereaseProduct = function (code) {
+           
+        }
+
+        $scope.deleteProductInCart = function (code) {
+            var url = "api/cart/" + code
+            console.log(url);
+
+            $http.delete(url)
+                .then(function (response) {
+                    //First function handles success
+                    console.log(response.data);
+                    $scope.listCart = response.data.items
+                    $scope.totalPrice = response.data.totalPrice
+                    $scope.quantityInCart = response.data.qty
+                    console.log($scope.quantityInCart)
+
+                }, function (response) {
+                    //Second function handles error
+                });
+                
+                
+        }
+        
+        
+    });
+</script>
 
 </html>

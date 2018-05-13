@@ -77,7 +77,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
+                        <h4 class="modal-title" id="Login">LOGIN</h4>
                     </div>
                     <div class="modal-body">
                         <form action="/api/login" method="post">
@@ -156,10 +156,7 @@
                                             <h5>MAN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
 
                                             </ul>
@@ -168,42 +165,40 @@
                                             <h5>WOMEN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sexy</a>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-                                            <h5>CHILD</h5>
+                                            <h5>Kids</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
+
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
 
                                         </div>
                                     </div>
+
                                 </div>
-                                <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
@@ -451,7 +446,7 @@
                     $scope.isLogin = false
                 });
         }
-        
+
         $scope.logout = function () {
             $http.get("api/logout")
                 .then(function (response) {

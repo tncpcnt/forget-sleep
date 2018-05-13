@@ -46,7 +46,9 @@
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
+                    <font color="#ffffff">Promotion</font>
+                </a>
                 <a href="#">Get flat 35% off on orders over $50!</a>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
@@ -130,7 +132,6 @@
                 </div>
             </div>
             <!--/.navbar-header -->
-
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
@@ -149,9 +150,8 @@
                                             <h5>MAN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-
 
                                             </ul>
                                         </div>
@@ -159,24 +159,24 @@
                                             <h5>WOMEN</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sexy</a>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-                                            <h5>KIDS</h5>
+                                            <h5>Kids</h5>
                                             <ul>
                                                 <li>
-                                                    <a href="category.html">Pajamas</a>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -185,14 +185,14 @@
                                             <ul>
 
                                                 <li>
-                                                    <a href="category.html">Sleep wear</a>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
 
                                         </div>
                                     </div>
+
                                 </div>
-                                <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
@@ -202,8 +202,16 @@
 
             </div>
             <!--/.nav-collapse -->
+            <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
+
+                <div class="navbar-collapse collapse right" id="point-overview">
+                    <a href="point.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-star"></i>
+                        <span class="hidden-sm">You have 30 Point</span>
+                    </a>
+                </div>
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="basket.html" class="btn btn-primary navbar-btn">
@@ -252,7 +260,7 @@
         <div id="content">
             <div class="container">
 
-                <div class="col-md-12">
+                <div class="col-md-15">
                     <ul class="breadcrumb">
                         <li>
                             <a href="#">Home</a>
@@ -261,11 +269,11 @@
                     </ul>
                 </div>
 
-                <div class="col-md-9" id="basket">
+                <div class="col-md-15" id="basket">
 
                     <div class="box">
 
-                        <form method="post" action="checkout1.html">
+                        <form method="get" action="checkout4.html">
 
                             <h1>Shopping cart</h1>
                             <p class="text-muted">You currently have [[quantityInCart]] item(s) in your cart.</p>
@@ -273,7 +281,7 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th colspan="2">Product</th>
+                                            <th colspan="3">Product</th>
                                             <th>Quantity</th>
                                             <th>Unit price</th>
                                             <th colspan="2">Total</th>
@@ -289,6 +297,7 @@
                                             <td>
                                                 <a href="#" [[product.item.nameProduct]]</a>
                                             </td>
+                                            <td>[[product.code]]</td>
                                             <td>[[product.qty]] sets</td>
                                             <td>[[product.item.price]] Bath</td>
                                             <td>[[product.price]] Bath</td>
@@ -318,11 +327,14 @@
                                 <div class="pull-right">
                                     <button class="btn btn-default">
                                         <i class="fa fa-refresh"></i> Update basket</button>
-                                    <a href="checkout1.html" class="btn btn-default">
-                                        <i class="fa fa-chevron-right"></i> Proceed to checkout</a>
+                                    <button type="submit" class="btn btn-primary">Proceed to checkout
+                                        <i class="fa fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
+
+
+
 
                         </form>
 
@@ -330,128 +342,8 @@
                     <!-- /.box -->
 
 
-                    <div class="row same-height-row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="box same-height">
-                                <h3>You may also like these products</h3>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a ng-clicg>
-                                                <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a ng-click="viewDtail(product._id)">
-                                                <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a ng-click="viewDtail(product._id)" class="invisible">
-                                    <img ng-src="pic/[[product.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>
-                                        <a ng-click="viewDtail(product._id)">
-                                            [[product.nameProduct]]</a>
-                                    </h3>
-                                    <p class="price">[[product.price]] Bath.</p>
-
-                                    <!--  <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product2_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product2.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>Fur coat</h3>
-                                    <p class="price">$143</p>
-                                </div>
-                            </div> -->
-                                    <!-- /.product -->
-                                </div>
-
-                                <!-- <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>Fur coat</h3>
-                                    <p class="price">$143</p>
-                                </div>
-                            </div> -->
-                                <!-- /.product -->
-                            </div>
-
-
-                            <!--  <div class="col-md-3 col-sm-6">
-                            <div class="product same-height">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product3.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product3_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product3.jpg" alt="" class="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3>Fur coat</h3>
-                                    <p class="price">Bath143</p>
-
-                                </div>
-                            </div> -->
-                            <!-- /.product -->
-                        </div> 
-
-                    </div>
-
-
-                </div>
-                <!-- /.col-md-9 -->
-
-                <div class="col-md-3">
+                    
+                <div class="col-md-15">
                     <div class="box" id="order-summary">
                         <div class="box-header">
                             <h3>Order summary</h3>
@@ -467,11 +359,11 @@
                                     </tr>
                                     <tr>
                                         <td>VAT</td>
-                                        <th>0.00 Bath</th>
+                                        <th>7 %</th>
                                     </tr>
                                     <tr class="total">
                                         <td>TOTAL</td>
-                                        <th>[[totalPrice]] Bath</th>
+                                        <th>[[totalPrice*1.07]] Bath</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -488,6 +380,7 @@
             </div>
             <!-- /#content -->
 
+        
             <!-- *** FOOTER ***
  _________________________________________________________ -->
 
@@ -500,7 +393,7 @@
 
             <!-- *** COPYRIGHT ***
  _________________________________________________________ -->
-           <!-- <div id="copyright">
+            <!-- <div id="copyright">
                 <div class="container">
                     <div class="col-md-6">
                         <p class="pull-left">© 2015 Your name goes here.</p>
@@ -513,29 +406,29 @@
                             <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  
                         </p>
                     </div> -->
-                </div>
-            </div>
-            <!-- *** COPYRIGHT END *** -->
-
-
-
         </div>
-        <!-- /#all -->
+    </div>
+    <!-- *** COPYRIGHT END *** -->
+
+
+
+    </div>
+    <!-- /#all -->
 
 
 
 
-        <!-- *** SCRIPTS TO INCLUDE ***
+    <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-        <script src="js/jquery-1.11.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.cookie.js"></script>
-        <script src="js/waypoints.min.js"></script>
-        <script src="js/modernizr.js"></script>
-        <script src="js/bootstrap-hover-dropdown.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/front.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap-hover-dropdown.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/front.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </body>
 <script> 
     var app = angular.module('myApp', []);
@@ -592,6 +485,7 @@
                     //Second function handles error 
                 });
         }
+
         $scope.getProductById = function (id) {
             $http.get("api/product/id/" + id)
                 .then(function (response) {

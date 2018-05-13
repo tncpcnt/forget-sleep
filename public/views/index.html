@@ -63,11 +63,14 @@
                     <li ng-if="isLogin == true">
                         <a>[[username]]</a>
                     </li>
+                    <li>
+                        <a href="customer-account.html">Setting</a>
+                    </li>
                     <li ng-if="isLogin == true">
                         <a ng-click="logout()">Logout</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="customer-orders.html">Notification</a>
                     </li>
 
                 </ul>
@@ -138,6 +141,7 @@
                     </a>
                 </div>
             </div>
+        
             <!--/.navbar-header -->
 
             <div class="navbar-collapse collapse" id="navigation">
@@ -199,8 +203,8 @@
 
                                         </div>
                                     </div>
+
                                 </div>
-                                <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
@@ -212,6 +216,13 @@
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
+
+                <div class="navbar-collapse collapse right" id="point-overview">
+                    <a href="point.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-star"></i>
+                        <span class="hidden-sm">Point</span>
+                    </a>
+                </div>
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="basket.html" class="btn btn-primary navbar-btn">
@@ -347,30 +358,30 @@
                             <h2>PROMOTION</h2>
                         </div>
                     </div>
-                    </div>
+                </div>
 
                 <div class="container">
-                        <div class="item">
+                    <div class="item">
 
-                            <div class="row promotions">
-                                <div ng-repeat="promotion in listPromotion">
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="promotion">
-                                            <div class="flip-container">
-                                                <div class="flipper">
-                                                    <div class="front">
-                                                        <a ng-clicg>
-                                                            <img ng-src="pic/[[promotion.image]]" onerror="this.src='pic/promotion_image_not_found.gif'" alt="" class="img-responsive">
-                                                        </a>
-                                                    </div>
+                        <div class="row promotions">
+                            <div ng-repeat="promotion in listPromotion">
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="promotion">
+                                        <div class="flip-container">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <a ng-clicg>
+                                                        <img ng-src="pic/[[promotion.image]]" onerror="this.src='pic/promotion_image_not_found.gif'" alt="" class="img-responsive">
+                                                    </a>
                                                 </div>
+                                            </div>
 
-                                                <div class="text">
-                                                    <h3>
-                                                        <a ng-click="viewDtail(promotion.detail)">
-                                                            [[promotion.nameProduct]]</a>
-                                                    </h3>
-                                                   <!-- <p class="price">[[promotion.price]] Bath.</p>
+                                            <div class="text">
+                                                <h3>
+                                                    <a ng-click="viewDtail(promotion.detail)">
+                                                        [[promotion.nameProduct]]</a>
+                                                </h3>
+                                                <!-- <p class="price">[[promotion.price]] Bath.</p>
                                                     <p class="discounts">[[promotion.discounts]] %</p>
                                                       <p class="buttons"> 
                                             <a ng-click="viewDtail(product._id)" class="btn btn-default">View detail</a> 
@@ -401,7 +412,7 @@
 
                 <!-- *** GET INSPIRED ***
  _________________________________________________________ -->
-               <!-- <div class="container" data-animate="fadeInUpBig">
+                <!-- <div class="container" data-animate="fadeInUpBig">
                     <div class="col-md-12">
                         <div class="box slideshow">
                             <h3>Get Inspired</h3>
@@ -417,12 +428,12 @@
                     </div>
                 </div>
             </div> -->
-            <!-- *** GET INSPIRED END *** -->
+                <!-- *** GET INSPIRED END *** -->
 
-            <!-- *** BLOG HOMEPAGE ***
+                <!-- *** BLOG HOMEPAGE ***
  _________________________________________________________ -->
 
-           <!-- <div class="box text-center " data-animate="fadeInUp ">
+                <!-- <div class="box text-center " data-animate="fadeInUp ">
                 <div class="container ">
                     <div class="col-md-12 ">
                         <h3 class="text-uppercase ">From our blog</h3>
@@ -483,30 +494,30 @@
                         </div>
 
                     </div> -->
-                    <!-- /#blog-homepage -->
-                </div>
+                <!-- /#blog-homepage -->
             </div>
-            <!-- /.container -->
-
-            <!-- *** BLOG HOMEPAGE END *** -->
-
-
         </div>
-        <!-- /#content -->
+        <!-- /.container -->
 
-        <!-- *** FOOTER ***
+        <!-- *** BLOG HOMEPAGE END *** -->
+
+
+    </div>
+    <!-- /#content -->
+
+    <!-- *** FOOTER ***
  _________________________________________________________ -->
 
-        <!-- /#footer -->
+    <!-- /#footer -->
 
-        <!-- *** FOOTER END *** -->
-
-
+    <!-- *** FOOTER END *** -->
 
 
-        <!-- *** COPYRIGHT ***
+
+
+    <!-- *** COPYRIGHT ***
  _________________________________________________________ -->
- <div id="copyright">
+    <div id="copyright">
         <div class="container">
             <div class="col-md-6">
                 <p class="pull-left">© 2018 Your name goes here.</p>

@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Forget Sleep Shopping Online
     </title>
 
     <meta name="keywords" content="">
@@ -56,8 +56,7 @@
                     </li>
                     <li><a href="contact.html">Contact</a>
                     </li>
-                    <li><a href="#">Recently viewed</a>
-                    </li>
+                  
                 </ul>
             </div>
         </div>
@@ -117,7 +116,8 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-xs">[[quantityInCart]] items in cart</span>
                     </a>
                 </div>
             </div>
@@ -126,10 +126,13 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active">
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,60 +140,74 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                
+
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
                                                 </li>
-                                                <li><a href="category.html">Sexy</a>
+                                                <li>
+                                                    <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
-                                            <h5>CHILD</h5>
+                                            <h5>Kids</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
                                                 </li>
-                                                <li><a href="category.html">Sleep wear</a>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
+
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
                                             </ul>
-                                            
+
                                         </div>
                                     </div>
+
                                 </div>
-                                <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>
 
-                    
+
                 </ul>
 
             </div>
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
+                
+                <div class="navbar-collapse collapse right" id="point-overview">
+                    <a href="point.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-star"></i>
+                        <span class="hidden-sm">You have 30 Point</span>
+                    </a>
+                </div>
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="#" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="hidden-sm">items in cart</span>
+                    </a>
                 </div>
                 <!--/.nav-collapse -->
 
@@ -235,7 +252,11 @@
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a>
                         </li>
-                        <li>Checkout - Payment method</li>
+                        <li><a href="http://localhost/ForgetSleep/checkout1.html">Payment method</a>
+                        </li>
+                        <li><a href="http://localhost/ForgetSleep/checkout2.html">Address</a>
+                        </li>
+                        <li>Transfer Method</li>
                     </ul>
                 </div>
 
@@ -243,57 +264,47 @@
 
                     <div class="box">
                         <form method="post" action="checkout4.html">
-                            <h1>Checkout - Payment method</h1>
+                            <h1>Checkout - Transfer Method</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li><a href="checkout1.html"><i class="fa fa-map-marker"></i><br>Address</a>
+                                <!--<li><a href="checkout1.html"><i class="fa fa-money"></i><br>Payment Method</a>
+                                </li> -->
+                               <!-- <li><a href="checkout2.html"><i class="fa fa-map-marker"></i><br>Address</a>
+                                </li> -->
+                               <li class="active"><a href="#"><i class="fa fa-truck"></i><br>Transfer Method</a>
                                 </li>
-                                <li><a href="checkout2.html"><i class="fa fa-truck"></i><br>Delivery Method</a>
-                                </li>
-                                <li class="active"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
-                                </li>
-                                <li class="disabled"><a href="checkout4.html"><i class="fa fa-eye"></i><br>Order Review</a>
-                                </li>
+                               <!-- <li class="disabled"><a href="checkout4.html"><i class="fa fa-eye"></i><br>Order Review</a>
+                                </li> -->
                             </ul>
-
+                            
+                            <center>
                             <div class="content">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="box payment-method">
+                                        <div class="box shipping-method" id = "shippingStatus">
 
-                                            <h4>Paypal</h4>
-
-                                            <p>We like it all.</p>
+                                            <h4>Shipping Status</h4>
+                                            <!--  สถานะพัสดุเป็นไปได้สองค่า คือ จัดส่งแล้ว (Shipped)กับเตรียมการจัดส่ง (Prepare to Shipping)-->    
+                                            
+                                            <!-- <h6 id="shipped"> Shipped </h6>-->
+                                            <h6 id="prepareShipping"> Prepare to Shipping</h6>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="payment" value="payment1">
                                             </div>
                                         </div>
                                     </div>
+                               
+                            <div class="content">
+                                <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="box payment-method">
+                                        <div class="box shipping-method" id="TrackingNumber">
 
-                                            <h4>Payment gateway</h4>
-
-                                            <p>VISA and Mastercard only.</p>
+                                            <h4>Tracking Number</h4>
+                                            
+                                            <h6 id="trackingNumber"> ET123456789TH </h6>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="payment" value="payment2">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="box payment-method">
-
-                                            <h4>Cash on delivery</h4>
-
-                                            <p>You pay when you get it.</p>
-
-                                            <div class="box-footer text-center">
-
-                                                <input type="radio" name="payment" value="payment3">
                                             </div>
                                         </div>
                                     </div>
@@ -301,6 +312,10 @@
                                 <!-- /.row -->
 
                             </div>
+                        </center>
+                            
+
+                            
                             <!-- /.content -->
 
                             <div class="box-footer">

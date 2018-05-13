@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Forget Sleep Shopping Online
     </title>
 
     <meta name="keywords" content="">
@@ -40,267 +40,370 @@
 
 </head>
 
-<body>
-    <!-- *** TOPBAR ***
+<body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()"></body>
+<!-- *** TOPBAR ***
  _________________________________________________________ -->
-    <div id="top">
-        <div class="container">
-            <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake"><font color="#ffffff">Promotion</font></a>  <a href="#">Get flat 35% off on orders over $50!</a>
-            </div>
-            <div class="col-md-6" data-animate="fadeInDown">
-                <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                    </li>
-                    <li><a href="register.html">Register</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a>
-                    </li>
-                    <li><a href="#">Recently viewed</a>
-                    </li>
-                </ul>
-            </div>
+<div id="top">
+    <div class="container">
+        <div class="col-md-6 offer" data-animate="fadeInDown">
+            <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">
+                <font color="#ffffff">Promotion</font>
+            </a>
+            <a href="#">Get flat 35% off on orders over $50!</a>
         </div>
-        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
+        <div class="col-md-6" data-animate="fadeInDown">
+            <ul class="menu">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                </li>
+                <li>
+                    <a href="register.html">Register</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
 
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email-modal" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password-modal" placeholder="password">
-                            </div>
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
 
-                            <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
-                            </p>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="Login">Customer login</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="customer-orders.html" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="email-modal" placeholder="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password-modal" placeholder="password">
+                        </div>
 
-                        </form>
+                        <p class="text-center">
+                            <button class="btn btn-primary">
+                                <i class="fa fa-sign-in"></i> Log in</button>
+                        </p>
 
-                        <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                    </form>
 
-                    </div>
+                    <p class="text-center text-muted">Not registered yet?</p>
+                    <p class="text-center text-muted">
+                        <a href="register.html">
+                            <strong>Register now</strong>
+                        </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+
                 </div>
             </div>
         </div>
-
     </div>
 
-    <!-- *** TOP BAR END *** -->
+</div>
 
-    <!-- *** NAVBAR ***
+<!-- *** TOP BAR END *** -->
+
+<!-- *** NAVBAR ***
  _________________________________________________________ -->
 
-    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-        <div class="container">
-            <div class="navbar-header">
+<div class="navbar navbar-default yamm" role="navigation" id="navbar">
+    <div class="container">
+        <div class="navbar-header">
 
-                <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                    <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
-                </a>
-                <div class="navbar-buttons">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                        <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
-                    </a>
-                </div>
-            </div>
-            <!--/.navbar-header -->
-
-            <div class="navbar-collapse collapse" id="navigation">
-
-                <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>MAN</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>WOMEN</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                                <li><a href="category.html">Sexy</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>CHILD</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>MASCOT</h5>
-                                            <ul>
-                                                <li><a href="category.html">Pajamas</a>
-                                                </li>
-                                                <li><a href="category.html">Sleep wear</a>
-                                                </li>
-                                            </ul>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.yamm-content -->
-                            </li>
-                        </ul>
-                    </li>
-
-                    
-                </ul>
-
-            </div>
-            <!--/.nav-collapse -->
-
+            <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+                <img src="img/logo.jpg" alt="Obaju logo" class="hidden-xs">
+                <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs">
+                <span class="sr-only">Obaju - go to homepage</span>
+            </a>
             <div class="navbar-buttons">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-align-justify"></i>
+                </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                    <span class="sr-only">Toggle search</span>
+                    <i class="fa fa-search"></i>
+                </button>
+                <a class="btn btn-default navbar-toggle" href="basket.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="hidden-xs">3 items in cart</span>
+                </a>
+            </div>
+        </div>
+        <!--/.navbar-header -->
 
-                <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
-                </div>
-                <!--/.nav-collapse -->
+        <div class="navbar-collapse collapse" id="navigation">
 
-                <div class="navbar-collapse collapse right" id="search-not-mobile">
-                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="dropdown yamm-fw">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>MAN</h5>
+                                        <ul>
+                                            <li>
+                                                <a ng-click="getProduct('men','pajamas')">Pajamas</a>
+                                            </li>
 
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>WOMEN</h5>
+                                        <ul>
+                                            <li>
+                                                <a ng-click="getProduct('women','pajamas')">Pajamas</a>
+                                            </li>
+                                            <li>
+                                                <a ng-click="getProduct('women','sleep_wear')">Sleep wear</a>
+                                            </li>
+                                            <li>
+                                                <a ng-click="getProduct('women','sexy')">Sexy</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>Kids</h5>
+                                        <ul>
+                                            <li>
+                                                <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
+                                            </li>
+                                            <li>
+                                                <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <h5>MASCOT</h5>
+                                        <ul>
+
+                                            <li>
+                                                <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <!--/.nav-collapse -->
+
+        <div class="navbar-buttons">
+
+            <div class="navbar-collapse collapse right" id="point-overview">
+                <a href="point.html" class="btn btn-primary navbar-btn">
+                    <i class="fa fa-star"></i>
+                    <span class="hidden-sm">You have 30 Point</span>
+                </a>
             </div>
 
-            <div class="collapse clearfix" id="search">
-
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-btn">
-
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-
-		    </span>
-                    </div>
-                </form>
-
+            <div class="navbar-collapse collapse right" id="basket-overview">
+                <a href="basket.html" class="btn btn-primary navbar-btn">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="hidden-sm">items in cart</span>
+                </a>
             </div>
             <!--/.nav-collapse -->
 
+            <div class="navbar-collapse collapse right" id="search-not-mobile">
+                <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
+                    <span class="sr-only">Toggle search</span>
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+
         </div>
-        <!-- /.container -->
-    </div>
-    <!-- /#navbar -->
 
-    <!-- *** NAVBAR END *** -->
+        <div class="collapse clearfix" id="search">
 
-    <div id="all">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
 
-        <div id="content">
-            <div class="container">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i>
+                        </button>
 
-                <div class="col-md-12">
-                    <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
-                        </li>
-                        <li>Checkout - Delivery method</li>
-                    </ul>
+                    </span>
                 </div>
+            </form>
 
-                <div class="col-md-9" id="checkout">
+        </div>
+        <!--/.nav-collapse -->
 
-                    <div class="box">
-                        <form method="post" action="checkout3.html">
-                            <h1>Checkout - Delivery method</h1>
-                            <ul class="nav nav-pills nav-justified">
-                                <li><a href="checkout1.html"><i class="fa fa-map-marker"></i><br>Address</a>
-                                </li>
-                                <li class="active"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
-                                </li>
-                                <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
-                                </li>
-                                <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
-                                </li>
-                            </ul>
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#navbar -->
 
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="box shipping-method">
+<!-- *** NAVBAR END *** -->
 
-                                            <h4>Kerry Express</h4>
+<div id="all">
 
-                                            <p>Get it right on next day - fastest option possible.</p>
+    <div id="content">
+        <div class="container">
 
-                                            <div class="box-footer text-center">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/ForgetSleep/checkout1.html">Payment method</a>
+                    </li>
+                    <li>Address</li>
+                </ul>
+            </div>
 
-                                                <input type="radio" name="delivery" value="delivery1">
-                                            </div>
-                                        </div>
+            <div class="col-md-9" id="checkout">
+
+                <div class="box">
+                    <form method="post" action="checkout3.html">
+                        <h1>Checkout - Address</h1>
+                        <ul class="nav nav-pills nav-justified">
+                            <!-- <li><a href="checkout1.html"><i class="fa fa-money"></i><br>Payment method</a>
+                                </li> -->
+                            <li class="active">
+                                <a href="#">
+                                    <i class="fa fa-map-marker"></i>
+                                    <br>Address</a>
+                            </li>
+                            <!-- <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Transfer Method</a>
+                                </li> -->
+                            <!-- <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
+                                </li> -->
+                        </ul>
+
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="firstname">Firstname</label>
+                                        <input type="text" class="form-control" id="firstname">
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="box shipping-method">
-
-                                            <h4>The post office</h4>
-
-                                            <p>Get it right on next day - fastest option possible.</p>
-
-                                            <div class="box-footer text-center">
-
-                                                <input type="radio" name="delivery" value="delivery2">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                  
                                 </div>
-                                <!-- /.row -->
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Lastname</label>
+                                        <input type="text" class="form-control" id="lastname">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="company">Address Hose No.</label>
+                                        <input type="text" class="form-control" id="company">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="street">Village No.</label>
+                                        <input type="text" class="form-control" id="street">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="city">Land</label>
+                                        <input type="text" class="form-control" id="city">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="zip">Road</label>
+                                        <input type="text" class="form-control" id="zip">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="state">Sub District</label>
+                                        <input class="form-control" id="state">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="country">District</label>
+                                        <input class="form-control" id="country">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="country">Province</label>
+                                        <input class="form-control" id="country">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="country">Zip Code</label>
+                                        <input class="form-control" id="country">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="phone">Telephone</label>
+                                        <input type="text" class="form-control" id="phone">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="form-group">
+                                        <input type="checkbox" name="address" value="add">
+                                        <label for="email">Send by address saved</label>
+
+                                    </div>
+                                </div>
 
                             </div>
-                            <!-- /.content -->
+                            <!-- /.row -->
+                        </div>
 
-                            <div class="box-footer">
-                                <div class="pull-left">
-                                    <a href="basket.html" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to Addresses</a>
-                                </div>
-                                <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary">Continue to Payment Method<i class="fa fa-chevron-right"></i>
-                                    </button>
-                                </div>
+
+                        <!-- /.content -->
+
+                        <div class="box-footer">
+                            <div class="pull-left">
+                                <a href="basket.html" class="btn btn-default">
+                                    <i class="fa fa-chevron-left"></i>Back to Addresses</a>
                             </div>
-                        </form>
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-primary">Shipping
+                                    <i class="fa fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+
+                    </form>
                     </div>
                     <!-- /.box -->
 
@@ -308,7 +411,7 @@
                 </div>
                 <!-- /.col-md-9 -->
 
-                <div class="col-md-3">
+                <!--  <div class="col-md-3">
 
                     <div class="box" id="order-summary">
                         <div class="box-header">
@@ -341,7 +444,7 @@
 
                     </div>
 
-                </div>
+                </div> -->
                 <!-- /.col-md-3 -->
 
             </div>
@@ -351,7 +454,7 @@
 
         <!-- *** FOOTER ***
  _________________________________________________________ -->
-        
+
         <!-- /#footer -->
 
         <!-- *** FOOTER END *** -->
@@ -368,8 +471,10 @@
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> & <a href="https://fity.cz">Fity</a>
-                         <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                    <p class="pull-right">Template by
+                        <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> &
+                        <a href="https://fity.cz">Fity</a>
+                        <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
                     </p>
                 </div>
             </div>
@@ -382,7 +487,7 @@
     <!-- /#all -->
 
 
-    
+
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
@@ -400,6 +505,104 @@
 
 
 
-</body>
+    </body>
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.config(function ($httpProvider) {
+            $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+            $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+        });
+        app.config(function ($interpolateProvider) {
+            $interpolateProvider.startSymbol('[[');
+            $interpolateProvider.endSymbol(']]');
+        });
+
+        app.controller('myCtrl', function ($scope, $http, $location, $window) {
+
+            $scope.myFunction = function () {
+                $http.get("api/islogin")
+                    .then(function (response) {
+                        //First function handles success 
+                        console.log(response)
+                        $scope.isLogin = true
+                        $scope.username = response.data.username
+                    }, function (response) {
+                        //Second function handles error 
+                        $scope.isLogin = false
+                    });
+                $scope.getProductInCart()
+                $scope.getProductById($window.localStorage.getItem('idProduct'))
+            }
+
+            $scope.logout = function () {
+                $http.get("api/logout")
+                    .then(function (response) {
+                        //First function handles success 
+                        $scope.isLogin = false
+                        window.location.reload(true)
+                    }, function (response) {
+                        //Second function handles error 
+                        $scope.isLogin = true
+                    });
+            }
+
+            $scope.getProductInCart = function () {
+                $http.get("api/cart")
+                    .then(function (response) {
+                        //First function handles success 
+                        console.log(response.data);
+                        $scope.listCart = response.data.items
+                        $scope.totalPrice = response.data.totalPrice
+                        $scope.quantityInCart = response.data.qty
+                        console.log($scope.quantityInCart)
+
+                    }, function (response) {
+                        //Second function handles error 
+                    });
+            }
+            $scope.getProductById = function (id) {
+                $http.get("api/product/id/" + id)
+                    .then(function (response) {
+                        //First function handles success 
+                        console.log(response.data);
+                        $scope.product = response.data.product[0]
+                    }, function (response) {
+                        //Second function handles error 
+                    });
+            }
+
+            $scope.getProduct = function (category, type) {
+                $window.localStorage.setItem('category', category);
+                $window.localStorage.setItem('type', type);
+                $window.location.href = "category.html"
+            }
+            $scope.dereaseProduct = function (code) {
+
+            }
+
+            $scope.deleteProductInCart = function (code) {
+                var url = "api/cart/" + code
+                console.log(url);
+
+                $http.delete(url)
+                    .then(function (response) {
+                        //First function handles success
+                        console.log(response.data);
+                        $scope.listCart = response.data.items
+                        $scope.totalPrice = response.data.totalPrice
+                        $scope.quantityInCart = response.data.qty
+                        console.log($scope.quantityInCart)
+
+                    }, function (response) {
+                        //Second function handles error
+                    });
+
+
+            }
+
+
+        });
+    </script>
 
 </html>

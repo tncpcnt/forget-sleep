@@ -138,13 +138,10 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active">
-                        <a href="index.html">Home</a>
+                    <li class="active"><a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
-                            <b class="caret"></b>
-                        </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Men <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -152,16 +149,30 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                <li>
+                                                 <li>
                                                     <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-
+                                               
                                             </ul>
                                         </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- /.yamm-content -->
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">WOMEN <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                                <li>
+                                               <li>
                                                     <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
@@ -170,42 +181,72 @@
                                                 <li>
                                                     <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
+                                               
                                             </ul>
                                         </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CHILD <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
                                         <div class="col-sm-3">
-                                            <h5>KIDS</h5>
+                                            <h5>CHILD</h5>
                                             <ul>
-                                                <li>
-                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
-                                                </li>
                                                 <li>
                                                     <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
                                                 </li>
+                                                
                                             </ul>
                                         </div>
+                                    </div>
+                                </div>
+                                 </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MASCOT <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
                                         <div class="col-sm-3">
                                             <h5>MASCOT</h5>
                                             <ul>
                                                 <li>
                                                     <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
                                                 </li>
+                                                
                                             </ul>
-
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.yamm-content -->
-                            </li>
+                                 </li>
                         </ul>
                     </li>
-
-
+                        
+                        
                 </ul>
 
             </div>
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
+                
+                <div class="navbar-collapse collapse right" id="point-overview">
+                    <a href="point.html" class="btn btn-primary navbar-btn">
+                        <i class="fa fa-star"></i>
+                        <span class="hidden-sm">You have 30 Point</span>
+                    </a>
+                </div>
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="basket.html" class="btn btn-primary navbar-btn">
@@ -470,7 +511,7 @@
                                         <p class="text-center buttons"> 
                                             <a ng-click="addToCart([[product.code]])" class="btn btn-primary"> 
                                                 <i class="fa fa-shopping-cart"></i> Add to cart</a> 
-                                            <a href="basket.html" class="btn btn-default"> 
+                                            <a ng-click="addToFav([[product.code]])" class="btn btn-default"> 
                                                 <i class="fa fa-heart"></i> Add to wishlist</a> 
                                         </p>
                                     </div>
@@ -603,6 +644,23 @@
 
              }); 
      } 
+     $scope.addToFav = function (code) {
+            console.log("api/addtocart/" + code[0]);
+
+            $http.get("api/addtocart/" + code)
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response.data);
+                    if (response.data.status == "success") {
+                        $scope.quantityInCart = response.data.qty
+                       // alert('Add To Fav !! : D')
+                    }
+                }, function (response) {
+                    //Second function handles error 
+                   // console.log(response);
+
+                });
+        }
      $scope.myFunction = function () { 
          $http.get("api/islogin") 
              .then(function (response) { 
