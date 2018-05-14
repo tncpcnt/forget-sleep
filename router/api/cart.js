@@ -3,6 +3,7 @@ module.exports = (() => {
     const path = require('path');
     const router = express.Router();
     var Cart = require('../../models/cart');
+    var Order = require('../../models/order');
     var Product = require('../../models/product');
     var user = require('../../models/user');
 
@@ -50,17 +51,23 @@ module.exports = (() => {
     });
 
     router.get('/invoice', function (req, res) {
+    
         var username = req.session.username
         console.log(username);
         var query = {
             username: username
         };
         var order = Math.floor((Math.random()*100000) + 1)
-
+        console.log("order: "+order);
+        
+        req.session.invoice.code = order;
         user.findOne(query, function (err, myuser) {
-            console.log(err);
+            Order.create(req.session.invoice,function(err,ord){
+                console.log(err);
             console.log(myuser);
-            req.session.invoice = req.session.cart
+            myuser.orders.push(ord)
+            myuser.save(function(err){
+                req.session.invoice = req.session.cart
             delete req.session.cart
             var cart = new Cart(req.session.invoice);
             res.json({
@@ -75,6 +82,13 @@ module.exports = (() => {
                 tell: myuser.tell,
                 email: myuser.email
             });
+            })
+            
+            
+            
+
+            });
+            
         });
     });
 
@@ -98,6 +112,7 @@ module.exports = (() => {
                 }
             });
         });
+        
         res.redirect("/invoice.html");
     });
 

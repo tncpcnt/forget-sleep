@@ -3,6 +3,7 @@ module.exports = (() => {
     const path = require('path');
     const router = express.Router();
     var user = require('../../models/user');
+    var Order = require('../../models/order');
 
     router.get('/islogin', function (req, res) {
         if (req.session.username) {
@@ -44,6 +45,18 @@ module.exports = (() => {
             }
 
         });
+    });
+
+    router.get('/order', function (req, res) {
+        var orders = [];
+        user.findOne({'username':req.session.username},function(err,usr){
+            console.log("Order jaaa:"+usr.orders);
+            res.status(200).json({
+                'orders': usr.orders
+            })
+        })
+        
+            
     });
 
     router.get('/logout', function (req, res) {

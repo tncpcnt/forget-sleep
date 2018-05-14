@@ -26,9 +26,7 @@ var userSchema = new Schema({
     province:String,
     zipCode:String,
 
-    historyCart:[{
-        type : mongoose.Schema.Types.ObjectId,
-        ref : 'product'
+    orders:[{
     }]
 });
 

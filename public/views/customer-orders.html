@@ -126,10 +126,13 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active">
+                        <a href="index.html">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Men <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CATEGORY
+                            <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,30 +140,16 @@
                                         <div class="col-sm-3">
                                             <h5>MAN</h5>
                                             <ul>
-                                                 <li>
+                                                <li>
                                                     <a ng-click="getProduct('men','pajamas')">Pajamas</a>
                                                 </li>
-                                               
+
                                             </ul>
                                         </div>
-                                        
-                                    </div>
-                                </div>
-                                <!-- /.yamm-content -->
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">WOMEN <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
                                         <div class="col-sm-3">
                                             <h5>WOMEN</h5>
                                             <ul>
-                                               <li>
+                                                <li>
                                                     <a ng-click="getProduct('women','pajamas')">Pajamas</a>
                                                 </li>
                                                 <li>
@@ -169,59 +158,37 @@
                                                 <li>
                                                     <a ng-click="getProduct('women','sexy')">Sexy</a>
                                                 </li>
-                                               
                                             </ul>
                                         </div>
-                                        
+                                        <div class="col-sm-3">
+                                            <h5>Kids</h5>
+                                            <ul>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','pajamas')">Pajamas</a>
+                                                </li>
+                                                <li>
+                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <h5>MASCOT</h5>
+                                            <ul>
+
+                                                <li>
+                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
                                     </div>
+
                                 </div>
-                                
                             </li>
                         </ul>
                     </li>
 
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">CHILD <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>CHILD</h5>
-                                            <ul>
-                                                <li>
-                                                    <a ng-click="getProduct('kids','sleep_wear')">Sleep wear</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                 </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">MASCOT <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>MASCOT</h5>
-                                            <ul>
-                                                <li>
-                                                    <a ng-click="getProduct('mascot','sleep_wear')">Sleep wear</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                 </li>
-                        </ul>
-                    </li>
-                        
-                        
+
                 </ul>
 
             </div>
@@ -284,7 +251,7 @@
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a>
                         </li>
-                        <li>Notification</li>
+                        <li>Transfer Method</li>
                     </ul>
 
                 </div>
@@ -296,7 +263,7 @@
 
                         <div class="panel-heading">
                             <h3 class="panel-title">Customer section</h3>
-                        </div>
+                        </div> 
 
                         <div class="panel-body">
 
@@ -324,10 +291,10 @@
 
                 <div class="col-md-9" id="customer-orders">
                     <div class="box">
-                        <h1>Notification</h1>
+                        <h1>Transfer Method</h1>
 
-                        <p class="lead">Your notification on one place.</p>
-                        <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                    <!--    <p class="lead">Your notification on one place.</p>
+                        <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p> -->
 
                         <hr>
 
@@ -339,7 +306,7 @@
                                         <th>Date</th>
                                         <th>Total</th>
                                         <th>Status</th>
-                                        <th>Invoice</th>
+                                        <th>Tracking Number</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -351,7 +318,7 @@
                                         <td>150.00</td>
                                         <td><span class="label label-success">Sent</span>
                                         </td>
-                                        <td><a href="invoice.html" class="btn btn-primary btn-sm">View</a>
+                                        <td><h6 id="trackingNumber"> ET123456780TH </h6>
                                         </td>
                                     </tr> 
                                     
@@ -361,7 +328,7 @@
                                         <td>150.00</td>
                                         <td><span class="label label-success">Sent</span>
                                         </td>
-                                        <td><a href="invoice.html" class="btn btn-primary btn-sm">View</a>
+                                        <td><h6 id="trackingNumber"> ET123456789TH </h6>
                                         </td>
                                     </tr>
                                     
@@ -371,7 +338,7 @@
                                         <td>150.00</td>
                                         <td><span class="label label-info">Wait for shipping</span>
                                         </td>
-                                        <td><a href="invoice.html" class="btn btn-primary btn-sm">View</a>
+                                        <td><h6 id="trackingNumber"> ET123456759TH </h6>
                                         </td>
                                     </tr>
                                 </tbody>
