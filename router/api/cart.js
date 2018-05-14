@@ -78,9 +78,9 @@ module.exports = (() => {
                 order: order,
                 name: myuser.firstname,
                 lastname: myuser.lastname,
-                address: myuser.address,
-                tell: myuser.tell,
-                email: myuser.email
+                address: myuser.address +" "+myuser.addressHoseNo+" "+myuser.province,
+                tell: myuser.tel,
+                email: myuser.username
             });
             })
             
