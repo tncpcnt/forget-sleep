@@ -42,7 +42,9 @@
 
 <body ng-app="myApp" ng-controller="myCtrl" ng-init="myFunction()">
     <!-- *** TOPBAR ***
+
  _________________________________________________________ -->
+
     <div id="top">
 
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
@@ -73,7 +75,8 @@
                         <p class="text-center text-muted">
                             <a href="register.html">
                                 <strong>Register now</strong>
-                            </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                            </a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!
+                        </p>
 
                     </div>
                 </div>
@@ -261,32 +264,34 @@
 
                                             <div class="col-xs-10">
 
+                                                <div id="content">
 
-                                                <div class="invoice-title">
-                                                    <img src="favicon.png" alt="Forget Sleep Shopping Online" width="50" height="50">
-                                                    <h2>Invoice</h2>
-                                                    <h3 class="pull-center">Order # [[order]]</h3>
-                                                    <h3 class="pull-right">[[date]]</h3>
+                                                    <div class="invoice-title">
+                                                        <img src="favicon.png" alt="Forget Sleep Shopping Online" width="50" height="50">
+                                                        <h2>Invoice</h2>
+                                                        <h3 class="pull-center">Order # [[order]]</h3>
+                                                        <h3 class="pull-right">[[date]]</h3>
 
-                                                </div>
-                                                <hr>
-                                                <div class="row">
-                                                    <div class="col-xs-12">
-                                                        <address>
-                                                            <strong>First Name: </strong> [[name]]
-                                                            <br/>
-                                                            <strong>Last Name: </strong> [[lastname]]
-                                                            <br>
-                                                            <strong>Address: </strong> [[address]]
-                                                            <br>
-                                                            <strong>Tel no: </strong> [[tell]]
-                                                            <br>
-                                                            <strong>Email: </strong> [[email]]
-                                                        </address>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <address>
+                                                                <strong>First Name: </strong> [[name]]
+                                                                <br/>
+                                                                <strong>Last Name: </strong> [[lastname]]
+                                                                <br>
+                                                                <strong>Address: </strong> [[address]]
+                                                                <br>
+                                                                <strong>Tel no: </strong> [[tell]]
+                                                                <br>
+                                                                <strong>Email: </strong> [[email]]
+                                                            </address>
+                                                        </div>
+
                                                     </div>
 
                                                 </div>
-
                                             </div>
                                         </div>
 
@@ -294,47 +299,48 @@
                                             <div class="col-md-11">
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading">
+
                                                         <h3 class="panel-title">
                                                             <strong>Order summary</strong>
                                                         </h3>
                                                     </div>
                                                     <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="3">Product</th>
-                                            <th>Quantity</th>
-                                            <th>Unit price</th>
-                                            <th colspan="2">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="product in listCart">
-                                            <td>
-                                                <a href="#">
-                                                    <img ng-src="pic/[[product.item.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="White Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="#" [[product.item.nameProduct]]</a>
-                                            </td>
-                                            <td>[[product.code]]</td>
-                                            <td>[[product.qty]] sets</td>
-                                            <td>[[product.item.price]] Bath</td>
-                                            <td>[[product.price]] Bath</td>
-                
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="5">Total</th>
-                                            <th colspan="2">[[totalPrice]] Bath</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                                        <div class="table-responsive">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th colspan="3">Product</th>
+                                                                        <th>Quantity</th>
+                                                                        <th>Unit price</th>
+                                                                        <th colspan="2">Total</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr ng-repeat="product in listCart">
+                                                                        <td>
+                                                                            <a href="#">
+                                                                                  <img style="height:100px; width:90px;" ng-src="pic/[[product.item.image]]" onerror="this.src='pic/product_image_not_found.gif'" alt="White Blouse Armani">
+                                                                            </a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="#" [[product.item.nameProduct]]</a>
+                                                                        </td>
+                                                                        <td>[[product.code]]</td>
+                                                                        <td>[[product.qty]] sets</td>
+                                                                        <td>[[product.item.price]] Bath</td>
+                                                                        <td>[[product.price]] Bath</td>
 
-                            </div>
+                                                                    </tr>
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <th colspan="5">Total</th>
+                                                                        <th colspan="2">[[totalPrice]] Bath</th>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+
+                                                        </div>
                                                     </div>
 
                                                 </div>
@@ -356,17 +362,14 @@
                                                 </div>
                                                 <div class="navbar-buttons">
 
-                                                    <div class="navbar-collapse collapse right" id="point-overview">
-                                                        <a href="invoice.html" download class="btn btn-primary navbar-btn">
+                                                    <div class="navbar-collapse collapse right" id='print-btn'>
+                                                        <a class="btn btn-primary navbar-btn">
                                                             <i class="fa fa-upload"></i>
                                                             <span class="hidden-sm">Issue a Invoice to Customer</span>
                                                         </a>
                                                     </div>
 
                                                 </div>
-
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -431,70 +434,79 @@
         <script src="js/bootstrap-hover-dropdown.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/front.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    </body>
-    <script> 
-        var app = angular.module('myApp', []);
-    
-        app.config(function ($httpProvider) {
-            $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-            $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+</body>
+<script>
+    var app = angular.module('myApp', []);
+
+    $('#print-btn').click(() => {
+        var pdf = new jsPDF('p', 'pt', 'a4');
+        pdf.addHTML(document.body, function () {
+            pdf.save('invoice.pdf');
         });
-        app.config(function ($interpolateProvider) {
-            $interpolateProvider.startSymbol('[[');
-            $interpolateProvider.endSymbol(']]');
-        });
-    
-        app.controller('myCtrl', function ($scope, $http, $location, $window) {
-    
-            $scope.myFunction = function () {
-                $http.get("api/islogin")
-                    .then(function (response) {
-                        //First function handles success 
-                        console.log(response)
-                        $scope.isLogin = true
-                        $scope.username = response.data.username
-                    }, function (response) {
-                        //Second function handles error 
-                        $scope.isLogin = false
-                    });
-                $scope.getInvoice()
-            }
-    
-            $scope.logout = function () {
-                $http.get("api/logout")
-                    .then(function (response) {
-                        //First function handles success 
-                        $scope.isLogin = false
-                        window.location.reload(true)
-                    }, function (response) {
-                        //Second function handles error 
-                        $scope.isLogin = true
-                    });
-            }
-    
-            $scope.getInvoice = function () {
-                $http.get("api/invoice")
-                    .then(function (response) {
-                        //First function handles success 
-                        console.log(response.data.items);
-                        $scope.listCart = response.data.items
-                        $scope.totalPrice = response.data.totalPrice
-                        $scope.quantityInCart = response.data.qty
-                        $scope.date = response.data.date
-                        $scope.order = response.data.order
-                        $scope.name = response.data.name
-                        $scope.lastname = response.data.lastname
-                        $scope.address = response.data.address
-                        $scope.tell = response.data.tell
-                        $scope.email = response.data.email
-                    }, function (response) {
-                        //Second function handles error 
-                    });
-            }
-    
-           
-        });
-    </script>
-    
-    </html>
+    })
+
+    app.config(function ($httpProvider) {
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    });
+    app.config(function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+    });
+
+    app.controller('myCtrl', function ($scope, $http, $location, $window) {
+
+        $scope.myFunction = function () {
+            $http.get("api/islogin")
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response)
+                    $scope.isLogin = true
+                    $scope.username = response.data.username
+                }, function (response) {
+                    //Second function handles error 
+                    $scope.isLogin = false
+                });
+            $scope.getInvoice()
+        }
+
+        $scope.logout = function () {
+            $http.get("api/logout")
+                .then(function (response) {
+                    //First function handles success 
+                    $scope.isLogin = false
+                    window.location.reload(true)
+                }, function (response) {
+                    //Second function handles error 
+                    $scope.isLogin = true
+                });
+        }
+
+        $scope.getInvoice = function () {
+            $http.get("api/invoice")
+                .then(function (response) {
+                    //First function handles success 
+                    console.log(response.data.items);
+                    $scope.listCart = response.data.items
+                    $scope.totalPrice = response.data.totalPrice
+                    $scope.quantityInCart = response.data.qty
+                    $scope.date = response.data.date
+                    $scope.order = response.data.order
+                    $scope.name = response.data.name
+                    $scope.lastname = response.data.lastname
+                    $scope.address = response.data.address
+                    $scope.tell = response.data.tell
+                    $scope.email = response.data.email
+                }, function (response) {
+                    //Second function handles error 
+                });
+        }
+
+
+    });
+</script>
+
+</html>
