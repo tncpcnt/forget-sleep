@@ -78,7 +78,7 @@ module.exports = (() => {
                 order: order,
                 name: myuser.firstname,
                 lastname: myuser.lastname,
-                address: myuser.address +" "+myuser.addressHoseNo+" "+myuser.province,
+                address: "addressHoseNo: "+myuser.addressHoseNo+" "+"villageNo: "+myuser.villageNo+" "+"land: "+myuser.land+" "+"road: "+myuser.road+" "+"subDistrict: "+myuser.subDistrict+" "+"district: "+myuser.district+" "+"province: "+myuser.province+" "+"zipCode: "+myuser.zipCode,
                 tell: myuser.tel,
                 email: myuser.username
             });
